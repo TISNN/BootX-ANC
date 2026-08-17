@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bootX · 启营 品牌设计 · 黑底几何版</title>
+<style>
+  @font-face{font-family:'Space Grotesk';src:url('space-grotesk-700.woff2') format('woff2');font-weight:700;}
+  @font-face{font-family:'Space Grotesk';src:url('space-grotesk-500.woff2') format('woff2');font-weight:500;}
+  @font-face{font-family:'Archivo Black';src:url('archivo-black.woff2') format('woff2');font-weight:400;}
+  :root{
+    --bg:#000; --ink:#fff; --silver:#d9dbdd; --dim:#6e7378; --line:#222; --accent:#1d9bf0;
+    --fbrand:'Space Grotesk','-apple-system','Helvetica Neue',Arial,sans-serif;
+    --faccent:'Archivo Black','-apple-system',sans-serif;
+    --fcn:'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--fbrand);background:var(--bg);color:var(--ink);line-height:1.6;padding:48px 24px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;}
+  h1{font-family:var(--fbrand);font-size:32px;font-weight:700;letter-spacing:-2px;}
+  h2{font-size:12px;margin:44px 0 16px;font-weight:700;color:var(--silver);text-transform:uppercase;letter-spacing:3px;}
+  .sub{color:var(--dim);font-size:14px;margin-top:8px;}
+  .lede{margin-top:20px;font-size:15px;color:var(--silver);border-left:3px solid var(--ink);padding-left:16px;max-width:740px;}
+  .kw{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+  .kw span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:12px;color:var(--silver);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:8px;}
+  .card{background:#0a0a0a;border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;align-items:center;}
+  .stage{width:100%;background:#000;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:26px 18px;min-height:190px;}
+  .stage svg{width:100%;height:auto;display:block;max-width:380px;}
+  .name{font-weight:700;margin-top:16px;font-size:14px;color:#fff;}
+  .desc{color:var(--dim);font-size:12.5px;margin-top:5px;text-align:center;}
+  .micro{font-size:11px;color:var(--dim);margin-top:10px;text-align:center;line-height:1.7;}
+
+  .swatch{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+  .sw{width:84px;}
+  .sw .box{height:56px;border-radius:10px;border:1px solid var(--line);}
+  .sw .lab{font-size:10px;color:var(--dim);margin-top:6px;}
+  .sw .hex{font-size:12px;color:var(--silver);font-weight:700;}
+
+  .usage{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:10px;}
+  .u{background:#0a0a0a;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  .u .top{padding:13px 16px;font-size:11px;color:var(--dim);border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:1px;}
+  .u .body{display:flex;align-items:center;justify-content:center;padding:22px;}
+  .u .body svg{width:100%;height:auto;display:block;}
+
+  .foot{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim);font-size:12px;line-height:1.8;}
+  code{background:#111;color:#e7e9ea;padding:2px 7px;border-radius:5px;font-size:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>bootX · 启营 品牌设计</h1>
+  <div class="sub">黑底 · 白标 · 双线 X · 字体已内嵌（离线可显）</div>
+
+  <div class="lede">
+    吸取上一版教训：<b>字母不再手绘</b>（手绘容易糊、认不出）。改用真正有个性的几何字体
+    <b>Space Grotesk</b>（已下载到本地内嵌，预览必显），字标清晰可读；
+    几何设计感集中在 <b>双线交叉的 X 图标</b>（致敬马斯克 X）与排版留白上。
+    西文主字体 Space Grotesk，备选 Archivo Black（超粗块感，接近 ha7ch 的厚重），中文 PingFang SC。
+  </div>
+  <div class="kw">
+    <span>清晰可读</span><span>双线X</span><span>几何字体</span><span>零渐变</span>
+    <span>黑白极简</span><span>Engineering-First</span>
+  </div>
+
+  <h2>一、Logo 四变体</h2>
+  <div class="grid">
+
+    <!-- A. 纯 X 图标 -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 120 120" width="200">
+          <rect width="120" height="120" fill="#000"/>
+          <path d="M30 30 L90 90" stroke="#fff" stroke-width="20" stroke-linecap="butt"/>
+          <path d="M90 30 L30 90" stroke="#fff" stroke-width="20" stroke-linecap="butt"/>
+        </svg>
+      </div>
+      <div class="name">A · 纯 X 图标</div>
+      <div class="desc">双线交叉、平切端帽，致敬马斯克 X。最极简，用于头像 / favicon。</div>
+    </div>
+
+    <!-- B. bootX 字标（主推） -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 420 130" width="400">
+          <rect width="420" height="130" fill="#000"/>
+          <text x="8" y="92" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="92" letter-spacing="-5" fill="#fff">boot</text>
+          <!-- 手绘双线 X，替代字体 X，更有几何设计感 -->
+          <g transform="translate(296,19)">
+            <path d="M0 0 L86 86" stroke="#fff" stroke-width="18" stroke-linecap="butt"/>
+            <path d="M86 0 L0 86" stroke="#fff" stroke-width="18" stroke-linecap="butt"/>
+          </g>
+        </svg>
+      </div>
+      <div class="name">B · bootX 字标（主推）</div>
+      <div class="desc">boot 用 Space Grotesk 清晰渲染，X 用手绘双线交叉收尾。可读 + 设计感并存。</div>
+      <div class="micro">字体：Space Grotesk 700 · 字距 -5 · X 双线交叉</div>
+    </div>
+
+    <!-- C. X 图标 + bootX 横排 -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 460 110" width="430">
+          <rect width="460" height="110" fill="#000"/>
+          <g transform="translate(8,18)">
+            <path d="M0 0 L74 74" stroke="#fff" stroke-width="16" stroke-linecap="butt"/>
+            <path d="M74 0 L0 74" stroke="#fff" stroke-width="16" stroke-linecap="butt"/>
+          </g>
+          <text x="108" y="74" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="62" letter-spacing="-3" fill="#fff">bootX</text>
+        </svg>
+      </div>
+      <div class="name">C · X + 字标组合</div>
+      <div class="desc">X 图标在左、bootX 在右，最正式的社媒封面 / 名片排法。</div>
+    </div>
+
+    <!-- D. Archivo Black 超粗块感版 -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 440 120" width="420">
+          <rect width="440" height="120" fill="#000"/>
+          <text x="6" y="86" font-family="Archivo Black, sans-serif" font-weight="400" font-size="78" letter-spacing="-2" fill="#fff">bootX</text>
+        </svg>
+      </div>
+      <div class="name">D · Archivo Black 超粗版</div>
+      <div class="desc">全部文字超粗块化，厚重有 ha7ch 那种工业感。最激进识别度。</div>
+      <div class="micro">字体：Archivo Black 400</div>
+    </div>
+
+  </div>
+
+  <h2>二、字体性格 · 实测渲染</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr;">
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 320 90" width="300"><rect width="320" height="90" fill="#000"/><text x="6" y="66" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="62" letter-spacing="-3" fill="#fff">bootX</text></svg>
+      </div>
+      <div class="name">Space Grotesk（主推）</div>
+      <div class="desc">几何怪诞、终端斜切，X / Linear / Vercel 同脉科技感。清晰且有个性的平衡。</div>
+    </div>
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 320 90" width="300"><rect width="320" height="90" fill="#000"/><text x="6" y="66" font-family="Archivo Black, sans-serif" font-weight="400" font-size="56" letter-spacing="-1" fill="#fff">bootX</text></svg>
+      </div>
+      <div class="name">Archivo Black（备选）</div>
+      <div class="desc">超粗海报体，块感强、识别度极高，偏 ha7ch 工业厚重。</div>
+    </div>
+  </div>
+
+  <h2>三、配色规范</h2>
+  <div class="swatch">
+    <div class="sw"><div class="box" style="background:#000;border-color:#333"></div><div class="hex">#000000</div><div class="lab">墨黑 · 主背景</div></div>
+    <div class="sw"><div class="box" style="background:#fff"></div><div class="hex">#FFFFFF</div><div class="lab">纯白 · 主图形</div></div>
+    <div class="sw"><div class="box" style="background:#d9dbdd"></div><div class="hex">#D9DBDD</div><div class="lab">银灰 · 次级文字</div></div>
+    <div class="sw"><div class="box" style="background:#6e7378"></div><div class="hex">#6E7378</div><div class="lab">暗灰 · 辅助</div></div>
+    <div class="sw"><div class="box" style="background:#1d9bf0"></div><div class="hex">#1D9BF0</div><div class="lab">电蓝 · 仅交互</div></div>
+  </div>
+
+  <h2>四、应用示例</h2>
+  <div class="usage">
+    <div class="u">
+      <div class="top">App 头像 · 圆角</div>
+      <div class="body">
+        <svg viewBox="0 0 120 120" width="110">
+          <rect width="120" height="120" rx="28" fill="#000"/>
+          <path d="M36 36 L84 84" stroke="#fff" stroke-width="13" stroke-linecap="butt"/>
+          <path d="M84 36 L36 84" stroke="#fff" stroke-width="13" stroke-linecap="butt"/>
+        </svg>
+      </div>
+    </div>
+    <div class="u">
+      <div class="top">社媒头图 · 黑底白标</div>
+      <div class="body">
+        <svg viewBox="0 0 340 90" width="320">
+          <rect width="340" height="90" fill="#000"/>
+          <text x="6" y="64" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="56" letter-spacing="-3" fill="#fff">boot</text>
+          <g transform="translate(228,15)"><path d="M0 0 L60 60" stroke="#fff" stroke-width="13" stroke-linecap="butt"/><path d="M60 0 L0 60" stroke="#fff" stroke-width="13" stroke-linecap="butt"/></g>
+        </svg>
+      </div>
+    </div>
+    <div class="u">
+      <div class="top">名片 · 横版</div>
+      <div class="body">
+        <svg viewBox="0 0 260 140" width="240">
+          <rect width="260" height="140" fill="#000"/>
+          <text x="20" y="58" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="44" letter-spacing="-2" fill="#fff">boot</text>
+          <g transform="translate(156,18)"><path d="M0 0 L44 44" stroke="#fff" stroke-width="10" stroke-linecap="butt"/><path d="M44 0 L0 44" stroke="#fff" stroke-width="10" stroke-linecap="butt"/></g>
+          <text x="20" y="98" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-weight="700" font-size="16" fill="#d9dbdd">启营 · FDE 部署社</text>
+          <text x="20" y="124" style="font-family:'Space Grotesk',sans-serif;font-size:10px;fill:#6e7378">bootx.so</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    核心改动：① <b>字母不再手绘</b>，全部用内嵌字体 Space Grotesk / Archivo Black 渲染，保证清晰可读；
+    ② 几何设计感集中在 <b>双线交叉 X 图标</b>（致敬马斯克 X）+ 超粗字重 + 负字距；
+    ③ 字体文件已下载到本地并 <code>@font-face</code> 内嵌，<b>离线预览也能正确显示</b>，不再回退成系统字体。
+    推荐主标：<b>B · bootX 字标</b>（清晰 + 设计感并存）。
+  </div>
+</div>
+</body>
+</html>

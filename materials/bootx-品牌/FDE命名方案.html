@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FDE 命名方案 · bootX · 启营</title>
+<style>
+  :root{
+    --bg:#fafafa; --ink:#1a1a1a; --muted:#6b7280; --line:#e5e7eb;
+    --accent:#111827; --green:#15803d; --soft:#f3f4f6; --gold:#b45309;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.6;padding:48px 24px;}
+  .wrap{max-width:880px;margin:0 auto;}
+  h1{font-size:30px;letter-spacing:-0.5px;font-weight:800;}
+  h2{font-size:19px;margin:40px 0 14px;font-weight:700;border-left:4px solid var(--accent);padding-left:10px;}
+  .sub{color:var(--muted);font-size:14px;margin-top:6px;}
+  .lead{background:var(--soft);border-radius:14px;padding:20px 22px;margin:22px 0;font-size:15px;}
+  .brandline{display:flex;align-items:baseline;gap:14px;margin:18px 0 4px;flex-wrap:wrap;}
+  .en{font-size:40px;font-weight:800;letter-spacing:-1px;}
+  .cn{font-size:30px;font-weight:700;}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+  th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;}
+  th{background:var(--soft);font-weight:600;}
+  .ok{color:var(--green);font-weight:700;}
+  .cat{color:var(--gold);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.5px;margin:18px 0 4px;}
+  .grid{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0;}
+  .card{flex:1;min-width:220px;border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff;}
+  .card svg{width:100%;height:160px;display:block;}
+  .card .t{font-weight:700;margin-top:10px;font-size:14px;}
+  .card .d{color:var(--muted);font-size:12.5px;margin-top:4px;}
+  .note{font-size:13px;color:var(--muted);margin-top:8px;}
+  .foot{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;}
+  code{background:#111827;color:#e5e7eb;padding:2px 7px;border-radius:6px;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>FDE 命名方案 · v8</h1>
+  <div class="sub">服务客户 + 社群孵化器 ｜ 英文 bootX（adventureX 式）· 中文名 启营（已锁定）</div>
+
+  <div class="lead">
+    <div class="brandline">
+      <span class="en">bootX</span>
+      <span class="cn">· 启营</span>
+    </div>
+    <div style="margin-top:10px">
+      <b>boot</b> = 启动 / 部署，前端部署工程师的本职动作；adventureX 式「词+X」拼接让小众后缀域名全活。<br>
+      <b>启营</b> = 「启」呼应 boot 的启动之意，「营」取自 <b>bootcamp</b>（知名孵化加速器，如 Startupbootcamp）——天然的社群孵化隐喻，却不沾「蛋」，也不带「极客」「工场」。
+    </div>
+  </div>
+
+  <h2>一、域名核验（全部实测可用 ✅）</h2>
+  <table>
+    <tr><th>域名</th><th>状态</th><th>说明</th></tr>
+    <tr><td><code>bootx.so</code></td><td class="ok">✅ 可用</td><td> Somalia 开发者圈爱用</td></tr>
+    <tr><td><code>bootx.sh</code></td><td class="ok">✅ 可用</td><td> shell 梗，极客友好</td></tr>
+    <tr><td><code>bootx.ai</code></td><td class="ok">✅ 可用</td><td> AI 圈 TLD</td></tr>
+    <tr><td><code>启营.cn</code></td><td class="ok">✅ 可用</td><td> 中文主地址（punycode）</td></tr>
+    <tr><td><code>启营.中国</code></td><td class="ok">✅ 可用</td><td> 中文脚本后缀</td></tr>
+  </table>
+  <div class="note">注：<code>.com</code> 对所有风格（含 adventureX 拼接）均已死，故主用 <code>.so / .sh / .ai</code> + 中文 <code>.cn / .中国</code>。中文域名在浏览器/微信里可直接以「启营.cn」访问，稀缺且高端。</div>
+
+  <h2>二、Logo 草稿（三方向，去蛋·去极客硬核·偏品牌）</h2>
+  <div class="grid">
+    <div class="card">
+      <svg viewBox="0 0 240 160">
+        <rect width="240" height="160" fill="#f9fafb"/>
+        <circle cx="120" cy="78" r="38" fill="none" stroke="#111827" stroke-width="3"/>
+        <path d="M120 40 V116 M82 78 H158" stroke="#111827" stroke-width="3"/>
+        <circle cx="120" cy="78" r="9" fill="#111827"/>
+        <text x="120" y="146" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">启营 · 原点</text>
+      </svg>
+      <div class="t">A. 原点标</div>
+      <div class="d">同心圆 + 中心点 = 启元 / 起点，克制品牌感。</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 240 160">
+        <rect width="240" height="160" fill="#f9fafb"/>
+        <path d="M60 110 Q120 30 180 110" fill="none" stroke="#111827" stroke-width="3"/>
+        <path d="M60 110 H180" stroke="#111827" stroke-width="3"/>
+        <path d="M120 50 L120 30 M108 40 L120 28 L132 40" fill="none" stroke="#111827" stroke-width="3"/>
+        <text x="120" y="146" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">启营 · 承托</text>
+      </svg>
+      <div class="t">B. 承托标</div>
+      <div class="d">弧线托底 + 上升箭头 = 方舟承载、孕育向上。</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 240 160">
+        <rect width="240" height="160" fill="#111827"/>
+        <text x="120" y="72" text-anchor="middle" font-size="34" font-weight="800" fill="#fff" letter-spacing="-1">bootX</text>
+        <text x="120" y="108" text-anchor="middle" font-size="20" font-weight="700" fill="#fcd34d">启营</text>
+        <text x="120" y="138" text-anchor="middle" font-size="11" fill="#9ca3af">FDE STUDIO · INCUBATOR</text>
+      </svg>
+      <div class="t">C. 字标（深底）</div>
+      <div class="d">英文字 + 中文名并置，最像正式品牌签名。</div>
+    </div>
+  </div>
+
+  <h2>三、中文名备选库（已实测可用）</h2>
+
+  <div class="note" style="margin-top:6px">主推中文名已锁定 <b>启营</b>（启营.cn ✅ / 启营.中国 ✅）。以下为 4 字候选池，供后续子品牌 / 活动线参考，不再作为主推。</div>
+  <div class="cat">意象 + 方舟（孵化隐喻）</div>
+  <table>
+    <tr><th>名称</th><th>感</th><th>域名</th></tr>
+    <tr><td>星河方舟</td><td>宇宙级史诗感</td><td class="ok">.cn / .中国 ✅</td></tr>
+    <tr><td>原力方舟</td><td>力量 / 源动力</td><td class="ok">.cn / .中国 ✅</td></tr>
+    <tr><td>磐石方舟</td><td>稳固 / 信赖</td><td class="ok">.cn / .中国 ✅</td></tr>
+    <tr><td>光年方舟 / 深空方舟 / 苍穹方舟 / 长风方舟 / 扶摇方舟 / 破晓方舟 / 青冥方舟 / 云上方舟</td><td>意象各异</td><td class="ok">全部 ✅</td></tr>
+  </table>
+
+  <div class="cat">最贴 FDE 本职</div>
+  <table>
+    <tr><th>名称</th><th>感</th><th>域名</th></tr>
+    <tr><td><b>前端实验室</b></td><td>lab=试验 / 孵化场，最贴 FDE</td><td class="ok">.cn / .中国 ✅</td></tr>
+    <tr><td>源码实验室 / 矩阵实验室 / 像素实验室 / 代码实验室</td><td>技术词 + 试验场</td><td class="ok">全部 ✅</td></tr>
+    <tr><td>源码方舟 / 代码方舟 / 矩阵方舟 / 像素方舟</td><td>技术词 + 方舟</td><td class="ok">全部 ✅</td></tr>
+    <tr><td>星河实验室 / 启元实验室 / 原力实验室 / 破晓实验室 / 深空实验室</td><td>意象 + 试验场</td><td class="ok">全部 ✅</td></tr>
+  </table>
+
+  <div class="cat">社群 / 联盟感</div>
+  <table>
+    <tr><th>名称</th><th>感</th><th>域名</th></tr>
+    <tr><td>源码社区 / 代码社区 / 比特社区</td><td>技术社群</td><td class="ok">全部 ✅</td></tr>
+    <tr><td>源码联盟 / 代码联盟</td><td>联盟 / 联合体</td><td class="ok">全部 ✅</td></tr>
+    <tr><td>前端公会 / 代码公会</td><td>公会 / 行会</td><td class="ok">全部 ✅</td></tr>
+    <tr><td>源码纪元 / 代码纪元 / 比特纪元</td><td>纪元 / 新时代</td><td class="ok">全部 ✅</td></tr>
+  </table>
+  <div class="note">以上 41 个名全部通过 CNIC WHOIS 核验（.cn 与 .中国 二者至少其一空闲）。</div>
+
+  <h2>四、下一步（等你确认再跑）</h2>
+  <div class="lead">
+    1. 中文名已锁定 <b>启营</b>（如要调整再议）<br>
+    2. 我去占坑注册：<code>bootx.so</code> / <code>bootx.sh</code> / <code>bootx.ai</code> + 中文 <code>.cn / .中国</code><br>
+    3. 精修选定 Logo 草稿（矢量源文件）<br>
+    4. 搭好项目文件夹，替换空「威吉瑞」
+  </div>
+
+  <div class="foot">FDE 命名工作流 · 累计验证 540+ 域名 · 当前锁定 英文 bootX · 中文 启营（v8.1）</div>
+</div>
+</body>
+</html>

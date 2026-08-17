@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title desc">
+  <title id="title">bootX Staged Launch</title>
+  <desc id="desc">A stepped deployment path with a blue production-status point.</desc>
+  <path fill="currentColor" d="M20 78V58H38V40H58V22H80V42H60V60H40V78H20Z"/>
+  <circle cx="75" cy="73" r="5" fill="#1D9BF0"/>
+</svg>

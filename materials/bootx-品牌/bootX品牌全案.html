@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bootX · 启营 品牌全案</title>
+<style>
+  @font-face{font-family:'Space Grotesk';src:url('space-grotesk-700.woff2') format('woff2');font-weight:700;}
+  @font-face{font-family:'Space Grotesk';src:url('space-grotesk-500.woff2') format('woff2');font-weight:500;}
+  @font-face{font-family:'Archivo Black';src:url('archivo-black.woff2') format('woff2');font-weight:400;}
+  :root{
+    --bg:#000; --ink:#fff; --silver:#d9dbdd; --dim:#6e7378; --line:#222; --accent:#1d9bf0;
+    --fbrand:'Space Grotesk','-apple-system','Helvetica Neue',Arial,sans-serif;
+    --faccent:'Archivo Black','-apple-system',sans-serif;
+    --fcn:'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--fbrand);background:var(--bg);color:var(--ink);line-height:1.65;padding:48px 24px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:900px;margin:0 auto;}
+  h1{font-family:var(--fbrand);font-size:40px;font-weight:700;letter-spacing:-2.5px;}
+  h2{font-size:12px;margin:54px 0 20px;font-weight:700;color:var(--silver);text-transform:uppercase;letter-spacing:3px;}
+  .sub{color:var(--dim);font-size:14px;margin-top:10px;}
+  .lede{margin-top:22px;font-size:16px;color:var(--silver);border-left:3px solid var(--ink);padding-left:18px;max-width:760px;line-height:1.8;}
+  .kw{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+  .kw span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:12px;color:var(--silver);}
+
+  /* 品牌名展示 */
+  .hero{display:flex;align-items:center;gap:26px;margin-top:30px;background:#0a0a0a;border:1px solid var(--line);border-radius:20px;padding:30px 32px;}
+  .hero .mark{width:78px;height:78px;flex:0 0 78px;}
+  .hero .txt h3{font-family:var(--fbrand);font-size:34px;font-weight:700;letter-spacing:-1.5px;}
+  .hero .txt .cn{font-family:var(--fcn);font-size:16px;color:var(--silver);margin-top:4px;font-weight:700;}
+  .hero .txt .tag{font-family:var(--fcn);font-size:13px;color:var(--dim);margin-top:8px;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:10px;}
+  .card{background:#0a0a0a;border:1px solid var(--line);border-radius:18px;padding:24px;}
+  .card .n{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:1px;margin-bottom:10px;}
+  .card h4{font-family:var(--fbrand);font-size:19px;font-weight:700;letter-spacing:-.5px;margin-bottom:10px;}
+  .card p{font-family:var(--fcn);font-size:13.5px;color:var(--silver);line-height:1.8;}
+
+  /* 双引擎 */
+  .pillar{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px;}
+  .pill{background:#0a0a0a;border:1px solid var(--line);border-radius:18px;padding:26px;position:relative;overflow:hidden;}
+  .pill .idx{position:absolute;top:14px;right:18px;font-family:var(--faccent);font-size:46px;color:#161616;}
+  .pill .lab{font-family:var(--faccent);font-size:20px;letter-spacing:-.5px;margin-bottom:6px;}
+  .pill .en{font-family:var(--fbrand);font-size:12px;color:var(--accent);font-weight:700;letter-spacing:2px;margin-bottom:14px;}
+  .pill p{font-family:var(--fcn);font-size:13.5px;color:var(--silver);line-height:1.85;}
+  .pill ul{font-family:var(--fcn);font-size:13px;color:var(--silver);line-height:1.9;margin-top:8px;padding-left:18px;}
+
+  /* 使命愿景价值观 */
+  .mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px;}
+  .mvv .box{background:#0a0a0a;border:1px solid var(--line);border-radius:16px;padding:22px;}
+  .mvv .k{font-family:var(--fbrand);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:2px;}
+  .mvv .v{font-family:var(--fcn);font-size:15px;color:#fff;margin-top:10px;line-height:1.75;font-weight:700;}
+  .mvv .d{font-family:var(--fcn);font-size:12.5px;color:var(--dim);margin-top:8px;line-height:1.7;}
+
+  /* Slogan */
+  .slogan{margin-top:14px;background:linear-gradient(180deg,#0b0b0b,#000);border:1px solid var(--line);border-radius:20px;padding:40px 32px;text-align:center;}
+  .slogan .big{font-family:var(--faccent);font-size:34px;letter-spacing:-1px;line-height:1.2;}
+  .slogan .en{font-family:var(--fbrand);font-size:15px;color:var(--silver);margin-top:14px;letter-spacing:1px;}
+  .slogan .cn{font-family:var(--fcn);font-size:14px;color:var(--dim);margin-top:6px;}
+
+  /* 目标人群 */
+  .aud{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;justify-content:center;}
+  .aud span{background:#0a0a0a;border:1px solid var(--line);border-radius:12px;padding:12px 18px;font-family:var(--fcn);font-size:13.5px;color:var(--silver);}
+
+  /* —— VI：卡片 / 舞台 / 色板 / 应用 —— */
+  .stage{width:100%;background:#000;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:26px 18px;min-height:190px;}
+  .stage svg{width:100%;height:auto;display:block;max-width:400px;}
+  .name{font-weight:700;margin-top:16px;font-size:14px;color:#fff;text-align:center;}
+  .desc{color:var(--dim);font-size:12.5px;margin-top:5px;text-align:center;}
+  .micro{font-size:11px;color:var(--dim);margin-top:10px;text-align:center;line-height:1.7;}
+
+  .swatch{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+  .sw{width:84px;}
+  .sw .box{height:56px;border-radius:10px;border:1px solid var(--line);}
+  .sw .lab{font-size:10px;color:var(--dim);margin-top:6px;}
+  .sw .hex{font-size:12px;color:var(--silver);font-weight:700;}
+
+  .usage{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:10px;}
+  .u{background:#0a0a0a;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  .u .top{padding:13px 16px;font-size:11px;color:var(--dim);border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:1px;}
+  .u .body{display:flex;align-items:center;justify-content:center;padding:22px;}
+  .u .body svg{width:100%;height:auto;display:block;}
+
+  .foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim);font-size:12px;line-height:1.9;font-family:var(--fcn);}
+  code{background:#111;color:#e7e9ea;padding:2px 7px;border-radius:5px;font-size:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>bootX · 启营</h1>
+  <div class="sub">品牌全案 ｜ 品牌介绍 + 视觉识别（VI）· 黑白系统 · 标志方向 2.0</div>
+
+  <!-- ============ 品牌介绍 ============ -->
+  <div class="lede">
+    我们服务客户，也孵化同行。bootX 是前端部署工程师对外交付的工程品牌；启营，是把这群人聚起来、彼此托起的社群孵化器。一个负责把产品送上线，一个负责把人送上赛道。
+  </div>
+  <div class="kw">
+    <span>Frontend Deployment</span><span>服务客户</span><span>社群孵化</span>
+    <span>极简锋利</span><span>工程至上</span><span>上线即正义</span>
+  </div>
+
+  <h2>一、品牌名与释义</h2>
+  <div class="hero">
+    <svg class="mark" viewBox="0 0 100 100" aria-label="bootX Staged Launch 标志"><rect width="100" height="100" rx="22" fill="#000"/><path d="M20 78V58H38V40H58V22H80V42H60V60H40V78H20Z" fill="#fff"/><circle cx="75" cy="73" r="5" fill="#1d9bf0"/></svg>
+    <div class="txt">
+      <h3>bootX</h3>
+      <div class="cn">启营</div>
+      <div class="tag">boot = 启动 / 部署（FDE 本职） · X = 变量 / 扩展 · 标志以“分段上升的部署路径”为核心</div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="n">英文 · bootX</div>
+      <h4>启动，而后无限</h4>
+      <p>boot 是系统启动、是产品上线——前端部署工程师的每一次交付，本质都是一次 boot。X 是未知、是变量、是未被定义的可能，呼应 adventureX 一脉的拼接美学。纯字母、无数字、短促锋利。</p>
+    </div>
+    <div class="card">
+      <div class="n">中文 · 启营</div>
+      <h4>启动，成营</h4>
+      <p>「启」呼应 boot 的启动之意；「营」取自 bootcamp——全球公认的孵化加速器范式。启营天然绑定「社群孵化器」这条业务线：不是把人招进来，而是把他们送上起跑线。</p>
+    </div>
+  </div>
+
+  <h2>二、品牌定位</h2>
+  <div class="lede">
+    一句话：<b>为前端部署工程师而生的「服务客户 + 孵化同行」双引擎品牌。</b><br>
+    bootX 不做泛泛的开发者社区，也不只是一家外包工作室——它同时是<b>交付前端部署能力的工程品牌</b>，和<b>培育前端部署人才的孵化场</b>。
+  </div>
+
+  <h2>三、双引擎业务</h2>
+  <div class="pillar">
+    <div class="pill">
+      <div class="idx">01</div>
+      <div class="lab">bootX · 服务</div>
+      <div class="en">DEPLOYMENT STUDIO</div>
+      <p>面向企业的前端部署工程服务。把客户的 Web 产品稳稳送上线、跑得顺、扛得住。</p>
+      <ul>
+        <li>前端架构与上线部署</li>
+        <li>性能优化与可观测性</li>
+        <li>CI/CD 与交付流水线</li>
+        <li>Fractional 部署工程支持</li>
+      </ul>
+    </div>
+    <div class="pill">
+      <div class="idx">02</div>
+      <div class="lab">启营 · 孵化</div>
+      <div class="en">FDE INCUBATOR</div>
+      <p>面向前端部署工程师的社群与孵化器。彼此托起，把个人能力放大成群体势能。</p>
+      <ul>
+        <li>FDE 社群与共学</li>
+        <li>训练营 / 实战工作坊</li>
+        <li>项目孵化与 mentorship</li>
+        <li>资源、机会与人脉对接</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>四、使命 · 愿景 · 价值观</h2>
+  <div class="mvv">
+    <div class="box">
+      <div class="k">Mission</div>
+      <div class="v">让每一次上线，都成为起点。</div>
+      <div class="d">我们交付的不只是一次部署，而是客户与工程师共同向前的一步。</div>
+    </div>
+    <div class="box">
+      <div class="k">Vision</div>
+      <div class="v">成为 FDE 群体的第一归属地。</div>
+      <div class="d">当一名前端部署工程师想被服务、想成长、想连接，首先想到 bootX · 启营。</div>
+    </div>
+    <div class="box">
+      <div class="k">Values</div>
+      <div class="v">极简 · 锋利 · 工程至上</div>
+      <div class="d">少说废话，多上线。用工程能力说话，用结果证明价值。</div>
+    </div>
+  </div>
+
+  <h2>五、品牌口号</h2>
+  <div class="slogan">
+    <div class="big">上线，即起点。</div>
+    <div class="en">BOOT ONCE. BUILD FOREVER.</div>
+    <div class="cn">一次上线，是交付的终点，也是成长的开端。</div>
+  </div>
+
+  <h2>六、目标人群</h2>
+  <div class="aud">
+    <span>前端 / 全栈工程师</span>
+    <span>独立开发者</span>
+    <span>技术创业者</span>
+    <span>需要部署能力的中小企业</span>
+    <span>想进阶的初级前端</span>
+    <span>寻找同行者的资深 FDE</span>
+  </div>
+
+  <h2>七、品牌调性</h2>
+  <div class="lede" style="border-left-color:var(--accent)">
+    视觉：<b>黑底、白标、可验证的模块关系</b>。不再借用单纯的 X 交叉；标志应让人先读到“部署路径”，再读到品牌名。<br>
+    语言：工程化、克制、不煽情。像一份好的架构文档：直接、精确、可信。<br>
+    气质：冷静但有动势，像一个产品从本地环境被逐段推到线上。我们相信<b>上线即正义</b>。
+  </div>
+
+  <!-- ============ 视觉识别 VI ============ -->
+  <h2>八、Logo 六个方向</h2>
+  <div class="lede" style="border-left-color:var(--accent)">
+    这组六个方向分别测试：<b>部署阶梯、上线门、交付接力、模块 B、路径汇合、纯字标</b>。所有图形保留大面积留白，并避开与 X 平台相似的双斜线轮廓。<b>A「Staged Launch」推荐作为主标</b>：它同时表达启动、逐段部署和能力上升，16px 时仍有清楚的轮廓。
+  </div>
+  <div class="grid">
+
+    <!-- A. Staged Launch -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 100 100" width="200" style="color:#fff">
+          <rect width="100" height="100" rx="22" fill="#000"/>
+          <path d="M20 78V58H38V40H58V22H80V42H60V60H40V78H20Z" fill="currentColor"/>
+          <circle cx="75" cy="73" r="5" fill="#1d9bf0"/>
+        </svg>
+      </div>
+      <div class="name">A · Staged Launch（主推）</div>
+      <div class="desc">三段上升的部署路径，终点留一枚电蓝状态点。把“上线”做成可识别的动作，而不是一个泛化的 X。</div>
+      <div class="micro">适用：产品图标、favicon、社区头像、衣物刺绣</div>
+    </div>
+
+    <!-- B. Open Gate -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 100 100" width="200" style="color:#fff">
+          <rect width="100" height="100" rx="22" fill="#000"/>
+          <path d="M21 79V21H79V40H41V79H21Z" fill="currentColor"/>
+          <path d="M50 79V50H79V79H61V68H68V61H61V79H50Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="name">B · Open Gate</div>
+      <div class="desc">两组 L 形模块拼出开放入口与内侧空间，表达“把产品送出去，也把工程师带进来”。</div>
+      <div class="micro">适用：社区与孵化业务的独立识别</div>
+    </div>
+
+    <!-- C. Deploy Relay -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 100 100" width="200" style="color:#fff">
+          <rect width="100" height="100" rx="22" fill="#000"/>
+          <rect x="18" y="61" width="20" height="20" rx="5" fill="currentColor"/>
+          <rect x="42" y="40" width="20" height="20" rx="5" fill="currentColor"/>
+          <rect x="66" y="19" width="16" height="16" rx="5" fill="currentColor"/>
+          <path d="M33 63L51 46L73 29" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="name">C · Deploy Relay</div>
+      <div class="desc">三个带圆角的环境节点依次交接，从本地、预发到生产。最直观的工程叙事。</div>
+      <div class="micro">适用：服务线图标、课程模块、动效起点</div>
+    </div>
+
+    <!-- D. Boot Module -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 100 100" width="200" style="color:#fff">
+          <rect width="100" height="100" rx="22" fill="#000"/>
+          <path d="M24 17H46C63 17 76 29 76 43C76 51 72 57 65 60C73 63 79 70 79 79C79 94 66 83 24 83V17Z" fill="currentColor"/>
+          <rect x="42" y="31" width="17" height="15" rx="7.5" fill="#000"/>
+          <rect x="42" y="66" width="20" height="15" rx="7.5" fill="#000"/>
+        </svg>
+      </div>
+      <div class="name">D · Boot Module</div>
+      <div class="desc">从 b 的结构提取出的模块化符号；两个圆角开口像接口，也像系统启动后的两个服务槽位。</div>
+      <div class="micro">适用：工程服务、技术文档页、印刷物</div>
+    </div>
+
+    <!-- E. Converge -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 100 100" width="200" style="color:#fff">
+          <rect width="100" height="100" rx="22" fill="#000"/>
+          <path d="M18 25H33L53 45H82V60H47L27 40H18V25Z" fill="currentColor"/>
+          <path d="M18 75H33L53 55H82V40H47L27 60H18V75Z" fill="currentColor"/>
+          <rect x="48" y="45" width="12" height="10" rx="5" fill="#1d9bf0"/>
+        </svg>
+      </div>
+      <div class="name">E · Converge</div>
+      <div class="desc">两条路径在中心汇合后继续向前，保留“X 是变量”的精神，但不落入双斜线的既有视觉记忆。</div>
+      <div class="micro">适用：活动、合作、社群连接</div>
+    </div>
+
+    <!-- F. Wordmark -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 420 130" width="400">
+          <rect width="420" height="130" fill="#000"/>
+          <g transform="translate(24,27)" fill="#fff"><path d="M0 76V50H15V34H32V18H50V36H34V52H18V76H0Z"/><circle cx="46" cy="70" r="4" fill="#1d9bf0"/></g>
+          <text x="92" y="88" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="75" letter-spacing="-5" fill="#fff">bootX</text>
+        </svg>
+      </div>
+      <div class="name">F · Staged Launch + 字标</div>
+      <div class="desc">主标与 Space Grotesk 字标的正式组合。字标保持可读，图形承担识别，不再手绘一个 X 来“装饰”。</div>
+      <div class="micro">推荐用于官网首屏、名片、社媒头图</div>
+    </div>
+
+  </div>
+
+  <h2>九、字标与使用规则</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="stage"><svg viewBox="0 0 360 100" width="330"><rect width="360" height="100" fill="#000"/><text x="8" y="72" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="70" letter-spacing="-4" fill="#fff">bootX</text></svg></div>
+      <div class="name">Space Grotesk 700（主字标）</div>
+      <div class="desc">品牌名本身足够短，字标应只负责阅读。保持统一字距，X 与其他字母同一字体系统，不再拆开重画。</div>
+    </div>
+    <div class="card">
+      <div class="stage"><svg viewBox="0 0 360 100" width="330"><rect width="360" height="100" fill="#000"/><g transform="translate(18,18)" fill="#fff"><path d="M0 64V43H13V29H29V15H45V31H31V45H15V64H0Z"/><circle cx="41" cy="59" r="3.5" fill="#1d9bf0"/></g><text x="82" y="70" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="58" letter-spacing="-3" fill="#fff">bootX</text></svg></div>
+      <div class="name">图形 + 字标（推荐主组合）</div>
+      <div class="desc">图形高度约为字标大写高度的 1.15 倍；图形与字标之间保留至少一个模块宽度。小尺寸只用图形，避免压缩细节。</div>
+    </div>
+  </div>
+
+  <h2>十、配色规范</h2>
+  <div class="swatch">
+    <div class="sw"><div class="box" style="background:#000;border-color:#333"></div><div class="hex">#000000</div><div class="lab">墨黑 · 主背景</div></div>
+    <div class="sw"><div class="box" style="background:#fff"></div><div class="hex">#FFFFFF</div><div class="lab">纯白 · 主图形</div></div>
+    <div class="sw"><div class="box" style="background:#d9dbdd"></div><div class="hex">#D9DBDD</div><div class="lab">银灰 · 次级文字</div></div>
+    <div class="sw"><div class="box" style="background:#6e7378"></div><div class="hex">#6E7378</div><div class="lab">暗灰 · 辅助</div></div>
+    <div class="sw"><div class="box" style="background:#1d9bf0"></div><div class="hex">#1D9BF0</div><div class="lab">电蓝 · 仅交互</div></div>
+  </div>
+
+  <h2>十一、应用示例</h2>
+  <div class="usage">
+    <div class="u">
+      <div class="top">App 头像 · 圆角</div>
+      <div class="body">
+        <svg viewBox="0 0 100 100" width="110">
+          <rect width="100" height="100" rx="22" fill="#000"/>
+          <path d="M20 78V58H38V40H58V22H80V42H60V60H40V78H20Z" fill="#fff"/>
+          <circle cx="75" cy="73" r="5" fill="#1d9bf0"/>
+        </svg>
+      </div>
+    </div>
+    <div class="u">
+      <div class="top">社媒头图 · 黑底白标</div>
+      <div class="body">
+        <svg viewBox="0 0 340 90" width="320">
+          <rect width="340" height="90" fill="#000"/>
+          <g transform="translate(20,16)" fill="#fff"><path d="M0 58V40H13V27H28V12H45V29H30V44H15V58H0Z"/><circle cx="41" cy="53" r="3.5" fill="#1d9bf0"/></g>
+          <text x="84" y="63" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="56" letter-spacing="-3" fill="#fff">bootX</text>
+        </svg>
+      </div>
+    </div>
+    <div class="u">
+      <div class="top">名片 · 横版</div>
+      <div class="body">
+        <svg viewBox="0 0 260 140" width="240">
+          <rect width="260" height="140" fill="#000"/>
+          <g transform="translate(20,16)" fill="#fff"><path d="M0 44V30H10V20H22V10H36V23H24V34H12V44H0Z"/><circle cx="33" cy="40" r="3" fill="#1d9bf0"/></g>
+          <text x="68" y="58" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="44" letter-spacing="-2" fill="#fff">bootX</text>
+          <text x="20" y="98" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-weight="700" font-size="16" fill="#d9dbdd">启营 · FDE 部署社</text>
+          <text x="20" y="124" style="font-family:'Space Grotesk',sans-serif;font-size:10px;fill:#6e7378">bootx.so</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    bootX · 启营 ｜ 品牌全案（Draft v1）· 品牌介绍 + 视觉识别合集<br>
+    域名资产：<code>bootx.so</code> · <code>bootx.sh</code> · <code>bootx.ai</code> ｜ <code>启营.cn</code> · <code>启营.中国</code>（均验证可用）<br>
+    字体已内嵌（Space Grotesk / Archivo Black），Logo 为内嵌 SVG，离线可显。
+  </div>
+
+</div>
+</body>
+</html>

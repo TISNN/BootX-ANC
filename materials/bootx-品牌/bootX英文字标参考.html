@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>bootX · 英文字标方向参考</title>
+<style>
+  @font-face{font-family:Space;src:url('space-grotesk-700.woff2') format('woff2');font-weight:700}
+  @font-face{font-family:Archivo;src:url('archivo-black.woff2') format('woff2');font-weight:400}
+  :root{--bg:#050505;--panel:#0b0b0c;--line:#252527;--text:#f7f7f4;--muted:#8e9098;--blue:#1d9bf0}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Space,Arial,sans-serif;padding:56px 24px;-webkit-font-smoothing:antialiased}
+  main{max-width:1120px;margin:auto} h1{font-size:36px;letter-spacing:-2px;margin:0}.intro{max-width:720px;color:var(--muted);font:15px/1.8 Arial,sans-serif;margin:13px 0 42px}.intro b{color:var(--text)}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color .2s,transform .2s}.card:hover{border-color:#565862;transform:translateY(-3px)}.card.feature{grid-column:1/-1;border-color:#1d9bf0}
+  .stage{height:230px;background:#000;display:grid;place-items:center;padding:28px}.stage svg{display:block;width:100%;max-height:140px}.meta{padding:18px 20px 20px}.name{font-size:14px}.tag{font-family:Arial,sans-serif;color:var(--blue);font-size:11px;letter-spacing:1.2px;margin-bottom:8px}.desc{color:var(--muted);font:13px/1.7 Arial,sans-serif;margin-top:7px}.choice{display:inline-block;border:1px solid #1d9bf0;color:#7bc6ff;border-radius:99px;padding:3px 8px;font:10px Arial,sans-serif;margin-left:7px;vertical-align:2px}
+  .rule{margin:42px 0 22px;border-left:2px solid var(--blue);padding-left:16px;color:var(--muted);font:13px/1.75 Arial,sans-serif}.rule b{color:#fff}.foot{margin-top:44px;color:#696b70;font:12px Arial,sans-serif;border-top:1px solid var(--line);padding-top:16px}
+  @media(max-width:700px){body{padding:32px 16px}.grid{grid-template-columns:1fr}.stage{height:200px}}
+</style>
+</head>
+<body><main>
+  <h1>bootX · 英文字标方向</h1>
+  <p class="intro">参考你给的 <b>HA7CH</b>：低矮、几何、切口明确，不靠花哨特效。以下不是“换六个普通字体”，而是六种可继续精修的<b>定制字标语言</b>；暂不替换现有主标。</p>
+  <section class="grid">
+    <article class="card">
+      <div class="stage"><svg viewBox="0 0 520 140" aria-label="bootX Cutline wordmark"><defs><clipPath id="cut-a"><text x="22" y="104" font-family="Space,Arial,sans-serif" font-weight="700" font-size="103" letter-spacing="-8">bootX</text></clipPath></defs><g clip-path="url(#cut-a)" fill="#fff"><rect width="520" height="140"/><path d="M27 64H51L44 78H20Z M124 64H148L141 78H117Z M220 64H244L237 78H213Z M316 64H340L333 78H309Z M410 64H434L427 78H403Z" fill="#000"/></g><path d="M453 92h34" stroke="#1d9bf0" stroke-width="8" stroke-linecap="square"/></svg></div>
+      <div class="meta"><div class="tag">01 · CUTLINE <span class="choice">推荐</span></div><div class="name">切线字标</div><div class="desc">用一致角度切开每个字母，像代码被编译后留下的精确断面。气质最接近参考图，也保留 bootX 的可读性。</div></div>
+    </article>
+    <article class="card">
+      <div class="stage"><svg viewBox="0 0 520 140" aria-label="bootX Rail wordmark"><g transform="translate(18 18) skewX(-10)"><text x="0" y="86" fill="#fff" font-family="Space,Arial,sans-serif" font-weight="700" font-size="98" letter-spacing="-8">bootX</text><path d="M7 99H432" stroke="#fff" stroke-width="7"/><path d="M448 99H490" stroke="#1d9bf0" stroke-width="7"/></g></svg></div>
+      <div class="meta"><div class="tag">02 · RAIL</div><div class="name">部署轨道</div><div class="desc">字形整体前倾，并由一根水平“轨道”托住；更有推进感，适合工程服务线与落地页标题。</div></div>
+    </article>
+    <article class="card">
+      <div class="stage"><svg viewBox="0 0 520 140" aria-label="bootX Stencil wordmark"><defs><clipPath id="cut-c"><text x="19" y="104" font-family="Archivo,Arial Black,sans-serif" font-size="92" letter-spacing="-7">BOOTX</text></clipPath></defs><g clip-path="url(#cut-c)"><rect width="520" height="140" fill="#fff"/><path d="M0 51H520V62H0ZM0 87H520V96H0Z" fill="#000"/></g><rect x="444" y="29" width="9" height="9" fill="#1d9bf0"/></svg></div>
+      <div class="meta"><div class="tag">03 · STENCIL</div><div class="name">工业模板字</div><div class="desc">粗壮大写字母被两条工艺断口切开，像设备与机箱上的编号。识别最强，但气质也最硬。</div></div>
+    </article>
+    <article class="card">
+      <div class="stage"><svg viewBox="0 0 520 140" aria-label="bootX Outline wordmark"><g fill="none" stroke="#fff" stroke-width="10" stroke-linejoin="miter" stroke-linecap="square"><path d="M31 21V108H73Q99 108 99 86Q99 67 76 66Q96 63 96 45Q96 21 70 21Z"/><ellipse cx="145" cy="73" rx="31" ry="35"/><ellipse cx="221" cy="73" rx="31" ry="35"/><path d="M275 38H339M307 38V108M369 27L436 108M436 27L369 108"/></g><path d="M453 100h33" stroke="#1d9bf0" stroke-width="7"/></svg></div>
+      <div class="meta"><div class="tag">04 · OUTLINE</div><div class="name">线路骨架</div><div class="desc">把字母还原成结构线，不做常规填充。更轻、更像开发者工具；小尺寸需要搭配常规字标使用。</div></div>
+    </article>
+    <article class="card">
+      <div class="stage"><svg viewBox="0 0 520 140" aria-label="bootX Hyperwide wordmark"><g transform="translate(2 16) scale(1.12 0.82)"><text x="18" y="108" fill="#fff" font-family="Space,Arial,sans-serif" font-weight="700" font-size="108" letter-spacing="3">bootX</text></g><path d="M21 108H494" stroke="#fff" stroke-width="3"/><path d="M386 108H494" stroke="#1d9bf0" stroke-width="3"/></svg></div>
+      <div class="meta"><div class="tag">05 · HYPERWIDE</div><div class="name">低矮宽体</div><div class="desc">把字形压低、拉宽，直接借鉴参考图的比例而不复制字母造型。最适合横幅、社媒封面与胸前印花。</div></div>
+    </article>
+    <article class="card">
+      <div class="stage"><svg viewBox="0 0 520 140" aria-label="bootX Module wordmark"><g fill="#fff"><path d="M25 30H62C83 30 95 41 95 58C95 68 89 75 80 78C91 81 99 89 99 102C99 122 82 110 25 110V30ZM52 47V68H67C75 68 80 64 80 57C80 50 75 47 66 47H52ZM52 84V96H70C78 96 82 93 82 89C82 85 78 84 70 84H52Z"/><path d="M119 70C119 44 135 30 158 30C181 30 197 44 197 70C197 96 181 110 158 110C135 110 119 96 119 70ZM143 70C143 83 149 90 158 90C167 90 173 83 173 70C173 57 167 50 158 50C149 50 143 57 143 70Z"/><path d="M211 70C211 44 227 30 250 30C273 30 289 44 289 70C289 96 273 110 250 110C227 110 211 96 211 70ZM235 70C235 83 241 90 250 90C259 90 265 83 265 70C265 57 259 50 250 50C241 50 235 57 235 70Z"/><path d="M301 30H367V49H345V110H323V49H301V30Z"/><path d="M382 30H407L427 57L447 30H472L442 70L475 110H449L427 82L405 110H380L413 69Z"/></g><circle cx="487" cy="101" r="5" fill="#1d9bf0"/></svg></div>
+      <div class="meta"><div class="tag">06 · MODULE</div><div class="name">模块化字标</div><div class="desc">每个字母都由相同厚度的模块构成，和“部署阶梯”主图标属于同一套语法。最适合进一步定制成专属字体。</div></div>
+    </article>
+    <article class="card feature">
+      <div class="stage"><svg viewBox="0 0 900 160" aria-label="bootX Wide Cutline wordmark"><defs><clipPath id="cut-g"><text x="42" y="122" font-family="Space,Arial,sans-serif" font-weight="700" font-size="122" textLength="700" lengthAdjust="spacingAndGlyphs">bootX</text></clipPath></defs><g clip-path="url(#cut-g)"><rect width="900" height="160" fill="#fff"/><path d="M52 79H79L70 94H43ZM205 79H232L223 94H196ZM361 79H388L379 94H352ZM516 79H543L534 94H507ZM671 79H698L689 94H662Z" fill="#000"/></g><path d="M43 137H744" stroke="#fff" stroke-width="4"/><path d="M748 137H838" stroke="#1d9bf0" stroke-width="4"/></svg></div>
+      <div class="meta"><div class="tag">07 · WIDE CUTLINE <span class="choice">下一轮主推</span></div><div class="name">01 × 05 · 低矮切线体</div><div class="desc">将 01 的克制切口放进 05 的横向比例：字形更贴地、横幅感更强，保留完整骨架。建议下一步只围绕这版微调切口角度与字距，并做 24px 小尺寸测试。</div></div>
+    </article>
+  </section>
+  <p class="rule"><b>当前建议聚焦 07「Wide Cutline」。</b>它把你认可的 01 与 05 合成一套方向：切口保留科技感，低矮比例保留横幅气质。确定后，再做字母比例、切角与小尺寸测试，而不是直接把参考图的风格照搬。</p>
+  <div class="foot">bootX · 英文字标探索 v1 · 黑白为主，电蓝仅作为状态点。</div>
+</main></body></html>

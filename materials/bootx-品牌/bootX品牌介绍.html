@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bootX · 启营 品牌介绍</title>
+<style>
+  @font-face{font-family:'Space Grotesk';src:url('space-grotesk-700.woff2') format('woff2');font-weight:700;}
+  @font-face{font-family:'Space Grotesk';src:url('space-grotesk-500.woff2') format('woff2');font-weight:500;}
+  @font-face{font-family:'Archivo Black';src:url('archivo-black.woff2') format('woff2');font-weight:400;}
+  :root{
+    --bg:#000; --ink:#fff; --silver:#d9dbdd; --dim:#6e7378; --line:#222; --accent:#1d9bf0;
+    --fbrand:'Space Grotesk','-apple-system','Helvetica Neue',Arial,sans-serif;
+    --faccent:'Archivo Black','-apple-system',sans-serif;
+    --fcn:'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--fbrand);background:var(--bg);color:var(--ink);line-height:1.65;padding:48px 24px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:900px;margin:0 auto;}
+  h1{font-family:var(--fbrand);font-size:40px;font-weight:700;letter-spacing:-2.5px;}
+  h2{font-size:12px;margin:52px 0 18px;font-weight:700;color:var(--silver);text-transform:uppercase;letter-spacing:3px;}
+  .sub{color:var(--dim);font-size:14px;margin-top:10px;}
+  .lede{margin-top:22px;font-size:16px;color:var(--silver);border-left:3px solid var(--ink);padding-left:18px;max-width:760px;line-height:1.75;}
+  .kw{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+  .kw span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:12px;color:var(--silver);}
+
+  /* 品牌名展示 */
+  .hero{display:flex;align-items:center;gap:26px;margin-top:30px;background:#0a0a0a;border:1px solid var(--line);border-radius:20px;padding:30px 32px;}
+  .hero .x{width:78px;height:78px;flex:0 0 78px;}
+  .hero .txt h3{font-family:var(--fbrand);font-size:34px;font-weight:700;letter-spacing:-1.5px;}
+  .hero .txt .cn{font-family:var(--fcn);font-size:16px;color:var(--silver);margin-top:4px;font-weight:700;}
+  .hero .txt .tag{font-family:var(--fcn);font-size:13px;color:var(--dim);margin-top:8px;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:10px;}
+  .card{background:#0a0a0a;border:1px solid var(--line);border-radius:18px;padding:24px;}
+  .card .n{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:1px;margin-bottom:10px;}
+  .card h4{font-family:var(--fbrand);font-size:19px;font-weight:700;letter-spacing:-.5px;margin-bottom:10px;}
+  .card p{font-family:var(--fcn);font-size:13.5px;color:var(--silver);line-height:1.8;}
+
+  .pillar{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px;}
+  .pill{background:#0a0a0a;border:1px solid var(--line);border-radius:18px;padding:26px;position:relative;overflow:hidden;}
+  .pill .idx{position:absolute;top:14px;right:18px;font-family:var(--faccent);font-size:46px;color:#161616;}
+  .pill .lab{font-family:var(--faccent);font-size:20px;letter-spacing:-.5px;margin-bottom:6px;}
+  .pill .en{font-family:var(--fbrand);font-size:12px;color:var(--accent);font-weight:700;letter-spacing:2px;margin-bottom:14px;}
+  .pill p{font-family:var(--fcn);font-size:13.5px;color:var(--silver);line-height:1.85;}
+  .pill ul{font-family:var(--fcn);font-size:13px;color:var(--silver);line-height:1.9;margin-top:8px;padding-left:18px;}
+
+  .mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px;}
+  .mvv .box{background:#0a0a0a;border:1px solid var(--line);border-radius:16px;padding:22px;}
+  .mvv .k{font-family:var(--fbrand);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:2px;}
+  .mvv .v{font-family:var(--fcn);font-size:15px;color:#fff;margin-top:10px;line-height:1.75;font-weight:700;}
+  .mvv .d{font-family:var(--fcn);font-size:12.5px;color:var(--dim);margin-top:8px;line-height:1.7;}
+
+  .slogan{margin-top:14px;background:linear-gradient(180deg,#0b0b0b,#000);border:1px solid var(--line);border-radius:20px;padding:40px 32px;text-align:center;}
+  .slogan .big{font-family:var(--faccent);font-size:34px;letter-spacing:-1px;line-height:1.2;}
+  .slogan .en{font-family:var(--fbrand);font-size:15px;color:var(--silver);margin-top:14px;letter-spacing:1px;}
+  .slogan .cn{font-family:var(--fcn);font-size:14px;color:var(--dim);margin-top:6px;}
+
+  .aud{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;justify-content:center;}
+  .aud span{background:#0a0a0a;border:1px solid var(--line);border-radius:12px;padding:12px 18px;font-family:var(--fcn);font-size:13.5px;color:var(--silver);}
+
+  .foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim);font-size:12px;line-height:1.9;font-family:var(--fcn);}
+  code{background:#111;color:#e7e9ea;padding:2px 7px;border-radius:5px;font-size:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>bootX · 启营</h1>
+  <div class="sub">品牌介绍 ｜ 面向前端部署工程师（FDE）的「服务 + 孵化」双引擎品牌</div>
+
+  <div class="lede">
+    我们服务客户，也孵化同行。bootX 是前端部署工程师对外交付的工程品牌；启营，是把这群人聚起来、彼此托起的社群孵化器。一个负责把产品送上线，一个负责把人送上赛道。
+  </div>
+  <div class="kw">
+    <span>Frontend Deployment</span><span>服务客户</span><span>社群孵化</span>
+    <span>极简锋利</span><span>工程至上</span><span>上线即正义</span>
+  </div>
+
+  <!-- 品牌名 -->
+  <h2>一、品牌名与释义</h2>
+  <div class="hero">
+    <svg class="x" viewBox="0 0 120 120"><rect width="120" height="120" fill="#000"/><path d="M30 30 L90 90" stroke="#fff" stroke-width="20" stroke-linecap="butt"/><path d="M90 30 L30 90" stroke="#fff" stroke-width="20" stroke-linecap="butt"/></svg>
+    <div class="txt">
+      <h3>bootX</h3>
+      <div class="cn">启营</div>
+      <div class="tag">boot = 启动 / 部署（FDE 本职） · X = 变量 / 极致（adventureX 式拼接）</div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="n">英文 · bootX</div>
+      <h4>启动，而后无限</h4>
+      <p>boot 是系统启动、是产品上线——前端部署工程师的每一次交付，本质都是一次 boot。X 是未知、是变量、是未被定义的可能，呼应 adventureX 一脉的拼接美学。纯字母、无数字、短促锋利。</p>
+    </div>
+    <div class="card">
+      <div class="n">中文 · 启营</div>
+      <h4>启动，成营</h4>
+      <p>「启」呼应 boot 的启动之意；「营」取自 bootcamp——全球公认的孵化加速器范式。启营天然绑定「社群孵化器」这条业务线：不是把人招进来，而是把他们送上起跑线。</p>
+    </div>
+  </div>
+
+  <!-- 定位 -->
+  <h2>二、品牌定位</h2>
+  <div class="lede">
+    一句话：<b>为前端部署工程师而生的「服务客户 + 孵化同行」双引擎品牌。</b><br>
+    bootX 不做泛泛的开发者社区，也不只是一家外包工作室——它同时是<b>交付前端部署能力的工程品牌</b>，和<b>培育前端部署人才的孵化场</b>。
+  </div>
+
+  <!-- 双引擎 -->
+  <h2>三、双引擎业务</h2>
+  <div class="pillar">
+    <div class="pill">
+      <div class="idx">01</div>
+      <div class="lab">bootX · 服务</div>
+      <div class="en">DEPLOYMENT STUDIO</div>
+      <p>面向企业的前端部署工程服务。把客户的 Web 产品稳稳送上线、跑得顺、扛得住。</p>
+      <ul>
+        <li>前端架构与上线部署</li>
+        <li>性能优化与可观测性</li>
+        <li>CI/CD 与交付流水线</li>
+        <li>Fractional 部署工程支持</li>
+      </ul>
+    </div>
+    <div class="pill">
+      <div class="idx">02</div>
+      <div class="lab">启营 · 孵化</div>
+      <div class="en">FDE INCUBATOR</div>
+      <p>面向前端部署工程师的社群与孵化器。彼此托起，把个人能力放大成群体势能。</p>
+      <ul>
+        <li>FDE 社群与共学</li>
+        <li>训练营 / 实战工作坊</li>
+        <li>项目孵化与 mentorship</li>
+        <li>资源、机会与人脉对接</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 使命愿景价值观 -->
+  <h2>四、使命 · 愿景 · 价值观</h2>
+  <div class="mvv">
+    <div class="box">
+      <div class="k">Mission</div>
+      <div class="v">让每一次上线，都成为起点。</div>
+      <div class="d">我们交付的不只是一次部署，而是客户与工程师共同向前的一步。</div>
+    </div>
+    <div class="box">
+      <div class="k">Vision</div>
+      <div class="v">成为 FDE 群体的第一归属地。</div>
+      <div class="d">当一名前端部署工程师想被服务、想成长、想连接，首先想到 bootX · 启营。</div>
+    </div>
+    <div class="box">
+      <div class="k">Values</div>
+      <div class="v">极简 · 锋利 · 工程至上</div>
+      <div class="d">少说废话，多上线。用工程能力说话，用结果证明价值。</div>
+    </div>
+  </div>
+
+  <!-- Slogan -->
+  <h2>五、品牌口号</h2>
+  <div class="slogan">
+    <div class="big">上线，即起点。</div>
+    <div class="en">BOOT ONCE. BUILD FOREVER.</div>
+    <div class="cn">一次上线，是交付的终点，也是成长的开端。</div>
+  </div>
+
+  <!-- 目标人群 -->
+  <h2>六、目标人群</h2>
+  <div class="aud">
+    <span>前端 / 全栈工程师</span>
+    <span>独立开发者</span>
+    <span>技术创业者</span>
+    <span>需要部署能力的中小企业</span>
+    <span>想进阶的初级前端</span>
+    <span>寻找同行者的资深 FDE</span>
+  </div>
+
+  <!-- 品牌调性 -->
+  <h2>七、品牌调性</h2>
+  <div class="lede" style="border-left-color:var(--accent)">
+    视觉：<b>黑底、白标、双线交叉 X</b>，致敬马斯克 X 的极简暴力美学——零渐变、零装饰，只留锋利的几何与充足的留白。<br>
+    语言：工程化、克制、不煽情。像一份好的架构文档：直接、精确、可信。<br>
+    气质：未来主义、defiant minimalism、engineering-first。我们相信<b>上线即正义</b>。
+  </div>
+
+  <div class="foot">
+    bootX · 启营 ｜ 品牌介绍（Draft v1）<br>
+    域名资产：<code>bootx.so</code> · <code>bootx.sh</code> · <code>bootx.ai</code> ｜ <code>启营.cn</code> · <code>启营.中国</code>（均验证可用）<br>
+    关联文档：FDE命名方案.html · bootX品牌设计.html
+  </div>
+
+</div>
+</body>
+</html>
