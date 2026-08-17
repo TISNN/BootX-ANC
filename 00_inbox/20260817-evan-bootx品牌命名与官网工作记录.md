@@ -20,7 +20,8 @@ FDE 社群/团队需要一个统一的对外品牌。2026-08-16 由 Evan 拍板�
   - `bootX英文字标参考.html` —— 英文名标参考
   - `bootX-01切线字标精调.html` —— 切线字标精调
   - `FDE命名方案.html` —— FDE → BootX 命名方案
-  - `assets/` —— 字标 SVG（bootx-staged-launch.svg / bootx-staged-launch-lockup.svg）
+  - `assets/` —— 字标 SVG（bootx-staged-launch.svg / bootx-staged-launch-lockup.svg），实际 SVG 品牌资产用于 Staged Launch 图标与 Micro Cut 字标
+  - `bootx-logo.png`（1024×1024）—— 主 logo 位图文件
 - 官方网站仓库：`https://github.com/TISNN/BootX`（2026-08-17 由 Evan 构建并 push，独立仓库，与本知识库 BootX-ANC 分离）
 
 ## 可复用点
