@@ -1,0 +1,32 @@
+<svg viewBox="0 0 680 470" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+  <!-- 通用 ANC 知识飞轮架构图模板：复制后替换各层文字即可 -->
+  <rect x="0" y="0" width="680" height="470" fill="#FFFFFF"/>
+
+  <!-- 应用层 -->
+  <rect x="20" y="20" width="640" height="70" rx="8" fill="#1C1C1E"/>
+  <text x="36" y="44" fill="#C98A2D" font-size="13" font-weight="bold">应用层 · 业务入口</text>
+  <text x="36" y="70" fill="#FFFFFF" font-size="12">AI 客服机器人 ｜ 客户管理（画像/打标）｜ 任务与进度看板 ｜ 咨询问答 ｜ 新媒体运营 ｜ 数字员工</text>
+
+  <!-- 飞轮层 -->
+  <rect x="20" y="105" width="640" height="80" rx="8" fill="#EFEFEF" stroke="#E0E0E0"/>
+  <text x="36" y="128" fill="#1C1C1E" font-size="13" font-weight="bold">知识飞轮 · 三层回流（ANC）</text>
+  <text x="36" y="152" fill="#1C1C1E" font-size="12">① 全量日志采集（异步、不阻塞员工）  →  ② 周期性知识清洗（每周提炼高频问题/满意回答）  →  ③ 技能固化分发（SOP 复用）</text>
+
+  <!-- 知识底座 -->
+  <rect x="20" y="200" width="640" height="70" rx="8" fill="#1C1C1E"/>
+  <text x="36" y="224" fill="#C98A2D" font-size="13" font-weight="bold">知识底座 · RAG 知识库</text>
+  <text x="36" y="250" fill="#FFFFFF" font-size="12">财务知识 ｜ 税务知识 ｜ 横琴（合作区）补贴政策 ｜ 行业知识 ｜ 常见问题 ｜ 历史案例</text>
+
+  <!-- 数据层 -->
+  <rect x="20" y="285" width="640" height="60" rx="8" fill="#F7F7F7" stroke="#E0E0E0"/>
+  <text x="36" y="308" fill="#1C1C1E" font-size="13" font-weight="bold">数据层</text>
+  <text x="36" y="332" fill="#1C1C1E" font-size="12">全量对话 / 工单 / 案例日志（两微信号 + 企微 + 业务系统）</text>
+
+  <!-- 合规边界 -->
+  <rect x="20" y="360" width="640" height="70" rx="8" fill="#FBEDE6" stroke="#C0392B"/>
+  <text x="36" y="384" fill="#B02323" font-size="13" font-weight="bold">合规边界 · Human-in-the-loop</text>
+  <text x="36" y="410" fill="#1C1C1E" font-size="12">税务案件 ｜ 重大风险 ｜ 报价承诺 ｜ 正式申报  →  默认不自动发送，须人工审核确认</text>
+
+  <!-- 回流箭头（示意） -->
+  <text x="640" y="180" fill="#C98A2D" font-size="22" text-anchor="end">↻</text>
+</svg>

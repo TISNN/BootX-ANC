@@ -30,6 +30,11 @@ BootX 团队用多个 Agent（Codex / WorkBuddy / Trae / Cursor 等），所以�
 
 例：`skill-requirements-plan/`、`skill-weekly-clean/`。
 
+## 已收录技能
+
+- `bootx-requirements-plan/` — 客户需求确认与方案规划书（财税/企业服务/AI 转型，pre-payment 阶段）。
+  挂载方式见该目录内 `MOUNTING.md`。
+
 ## 固化标准
 
 某条知识被 ≥3 次不同人复用且验证有效，即可从 `knowledge/` 提炼入此目录。
