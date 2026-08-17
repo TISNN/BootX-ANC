@@ -44,11 +44,9 @@
 ## 4. 技能固化（飞轮最高形态）
 
 - 当某条知识被反复验证有效（≥3 次被不同人复用），从 `knowledge/` 提炼为 Agent 技能，**源文件放进 `skills/` 作为候选评审区**。
-- **注意**：`skills/` 是「源仓库 + 评审区」，不是 WorkBuddy 的加载位置。WorkBuddy 从以下位置加载技能：
-  - 用户级：`~/.workbuddy/skills/`
-  - 项目级：`{workspace}/.workbuddy/skills/`
-- 正式上线流程：候选在 `skills/` 评审通过后，用 skill-creator 正式创建（或把 `SKILL.md` 复制到上述加载目录），再通过仓库分发到全员。
-- 技能遵循 WorkBuddy Skill 格式（`SKILL.md` + 可选 `references/` `scripts/` `assets/`）。
+- **注意**：团队用多个 Agent（Codex / WorkBuddy / Trae / Cursor 等），`skills/` 存的是「中性的 `SKILL.md`」，不绑定单一工具。各 Agent 挂载方式不同（Codex→AGENTS.md、WorkBuddy→skills 目录、Trae/Cursor→规则文件），详见 `skills/README.md`。
+- 正式上线流程：候选在 `skills/` 评审通过后，各人按自己用的 Agent 挂载，再通过仓库分发到全员。
+- 技能遵循 `SKILL.md` 通用格式（`SKILL.md` + 可选 `references/` `scripts/` `assets/`）。
 
 ---
 

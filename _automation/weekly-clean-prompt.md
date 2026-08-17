@@ -1,7 +1,8 @@
 # BootX ANC 每周知识清洗 Prompt
 
 > 本文件是飞轮的核心引擎。每周自动化任务读取它并执行清洗。
-> 也可由人工复制本 Prompt 到 WorkBuddy 手动跑。
+> 也可由人工复制本 Prompt 到任意 Agent 手动跑。
+> 调度方式不限：当前用 WorkBuddy 每周自动化触发，也可改用 GitHub Actions / cron / 任意 Agent 定时任务，清洗逻辑与本 Prompt 无关。
 
 ---
 
