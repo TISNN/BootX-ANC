@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="materials/bootx-品牌/bootx-logo-full.png" alt="BootX" width="400">
+</p>
+
 # BootX 内部 ANC 知识库
 
 > BootX 团队的 AI Native Company（ANC）内部知识中枢 · Lite 模式（文件共享）
