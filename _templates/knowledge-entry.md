@@ -19,9 +19,8 @@ confidence: high|medium|low
 {下次遇到什么场景，直接调用这条知识}
 
 ## 关联
-- 事实来源：`10_facts/...`
-- 决策依据：`20_interactions/...`
-- 动作/SOP：`30_actions/...`
+- 同主题其他条目：`knowledge/...`
+- 原始产出物：`archive/...`
 
 ## 状态
-- [ ] 候选固化（被 ≥3 次验证后迁入 `50_skills/`）
+- [ ] 候选固化（被 ≥3 次验证后迁入 `skills/`）
