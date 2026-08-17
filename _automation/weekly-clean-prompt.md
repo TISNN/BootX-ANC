@@ -12,7 +12,7 @@
 
 ## 输入
 
-- 仓库根目录：`{REPO_ROOT}`（本提示由自动化在 cwd 指向该仓库时执行）
+- 仓库根目录：`/Users/evanxu/Documents/FDE-ANC-KB`（本提示由自动化在 cwd 指向该仓库时执行）
 - 待处理文件：`00_inbox/` 下所有 `.md` 文件（`.gitkeep` 忽略）
 
 ## 执行步骤
