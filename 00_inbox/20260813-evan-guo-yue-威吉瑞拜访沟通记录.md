@@ -14,7 +14,7 @@ tags: [客户沟通, 威吉瑞, 需求确认, AI客服, 工作记录]
 > BootX 参与：Evan、郭玥
 > 客户参与：罗祖威（品牌名"税罗汉"），威吉瑞创始人/法人
 > 形式：现场沟通 + 分享会
-> 参考材料：分享会 PPT《AI如何助力企业转型》（`/Users/evanxu/Documents/Obsidian Vault/FDE/分享会/AI如何助力企业转型.html`）
+> 参考材料：分享会 PPT《AI如何助力企业转型》（仓库内：`materials/威吉瑞/AI如何助力企业转型.html`，含配套 dashboard 图与分享稿 `AI如何助力企业转型-分享稿.md`）
 
 ## 一、客户背景与业务（来自税罗汉口述）
 
