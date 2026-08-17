@@ -9,6 +9,7 @@
 *.png
 *.jpg
 !_templates/**/*.png
+!materials/**/bootx-logo.png
 
 # 本地环境
 .env
