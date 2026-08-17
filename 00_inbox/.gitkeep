@@ -1,0 +1,6 @@
+# 投递区（Inbox）
+
+把本周用 Agent 完成的、有复用价值的产出物按 `_templates/inbox-submission.md` 格式丢进来。
+命名：`YYYYMMDD-作者缩写-主题.md`。
+
+每周清洗自动化会读取本目录全部文件，提炼后把原始文件移入 `../90_archive/`。
