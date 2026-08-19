@@ -11,6 +11,7 @@
 !_templates/**/*.png
 !materials/**/bootx-logo.png
 !materials/**/bootx-logo-full.png
+!materials/**/*.docx
 
 # 本地环境
 .env
