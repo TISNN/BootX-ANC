@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>威吉瑞 · 财税服务 AI 转型｜需求确认与方案规划书</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg2:#f5f7fb; --ink:#16202e; --muted:#5b6b80; --rule:#e4e9f1;
+    --accent:#1d4f91; --accent2:#c98a2d; --accent-soft:#e9f0f8; --accent2-soft:#f8f0e1;
+    --ok:#2f7d5b; --warn:#b3541e; --top:#b02323; --radius:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 28px;}
+  .cover{background:linear-gradient(135deg,#1d4f91,#163b6e);color:#fff;padding:74px 0 58px;position:relative;overflow:hidden;}
+  .cover::after{content:"";position:absolute;right:-70px;top:-70px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.06);}
+  .cover .kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:18px;font-weight:700;}
+  .cover h1{font-size:36px;line-height:1.25;font-weight:700;margin-bottom:14px;max-width:780px;}
+  .cover .sub{font-size:17px;opacity:.92;max-width:660px;}
+  .cover .meta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;}
+  .cover .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:13px;}
+  section{padding:52px 0;}
+  section.alt{background:var(--bg2);}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;flex-wrap:wrap;}
+  .sec-no{font-weight:700;font-size:14px;color:#fff;background:var(--accent);border-radius:6px;padding:4px 11px;white-space:nowrap;}
+  .sec-head h2{font-size:25px;font-weight:700;}
+  .sec-head .en{font-size:12px;color:var(--muted);letter-spacing:.05em;}
+  h3{font-size:19px;font-weight:700;margin:26px 0 12px;}
+  h4{font-size:16px;font-weight:700;margin:16px 0 8px;color:var(--accent);}
+  p{margin-bottom:12px;}
+  .muted{color:var(--muted);}
+  .lead{font-size:17px;color:var(--muted);margin-bottom:16px;}
+  strong{color:var(--ink);font-weight:700;}
+  .key{color:var(--accent);font-weight:700;}
+  ul,ol{margin:0 0 14px 22px;}
+  li{margin-bottom:6px;}
+  .card{background:var(--bg);border:1px solid var(--rule);border-radius:var(--radius);padding:20px 22px;margin-bottom:14px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media(max-width:720px){.grid2,.grid3{grid-template-columns:1fr;}}
+  .pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;}
+  .pill.top{background:var(--top);color:#fff;}
+  .pill.high{background:#fde8e8;color:var(--top);}
+  .pill.med{background:var(--accent2-soft);color:#8a5d12;}
+  .pill.low{background:var(--bg2);color:var(--muted);border:1px solid var(--rule);}
+  .table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--rule);border-radius:var(--radius);}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:620px;}
+  thead th{background:var(--accent);color:#fff;text-align:left;padding:11px 14px;font-weight:700;position:sticky;top:0;}
+  tbody td{padding:11px 14px;border-top:1px solid var(--rule);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--bg2);}
+  .total-row{background:var(--accent)!important;color:#fff;font-weight:700;}
+  .callout{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 var(--radius) var(--radius) 0;padding:15px 20px;margin:18px 0;}
+  .callout.gold{border-left-color:var(--accent2);background:var(--accent2-soft);}
+  .callout.warn{border-left-color:var(--warn);background:#fbeee6;}
+  .callout p{margin-bottom:4px;}
+  .pain{border-left:4px solid var(--accent2);background:var(--accent2-soft);border-radius:0 var(--radius) var(--radius) 0;padding:16px 20px;margin-bottom:14px;}
+  .pain .tag{display:inline-block;background:var(--accent2);color:#fff;font-size:12px;font-weight:700;border-radius:4px;padding:2px 9px;margin-bottom:8px;}
+  .mod{border:1px solid var(--rule);border-radius:var(--radius);margin-bottom:18px;overflow:hidden;}
+  .mod .mhead{display:flex;align-items:center;gap:12px;background:var(--bg2);padding:14px 20px;border-bottom:1px solid var(--rule);}
+  .mod .midx{background:var(--accent);color:#fff;font-weight:700;min-width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:15px;}
+  .mod .mtitle{font-size:17px;font-weight:700;flex:1;}
+  .mod .mbody{padding:18px 20px;}
+  .subitem{margin:12px 0 6px;font-weight:700;color:var(--accent);}
+  .phase{display:flex;gap:18px;margin:16px 0;}
+  .phase .pno{flex:0 0 46px;height:46px;border-radius:8px;background:var(--accent);color:#fff;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;}
+  .phase .pbody{flex:1;background:var(--bg2);border:1px solid var(--rule);border-radius:var(--radius);padding:16px 20px;}
+  .phase .pbody h4{margin-top:0;}
+  figure{margin:22px 0;text-align:center;}
+  svg{max-width:100%;height:auto;}
+  .note{font-size:13px;color:var(--muted);}
+  footer{background:#16202e;color:#cbd5e1;padding:38px 0 54px;margin-top:20px;}
+  footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;}
+  footer h4{color:#fff;margin-top:0;}
+  footer p{color:#cbd5e1;font-size:14px;}
+  @media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact;}body{font-size:12px;} .cover{padding:40px 0;} section{padding:26px 0;page-break-inside:avoid;}.grid2,.grid3,.card,.mod,.phase{page-break-inside:avoid;}}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<header class="cover">
+  <div class="wrap">
+    <div class="kicker">Requirements Confirmation &amp; AI Transformation Plan</div>
+    <h1>威吉瑞 · 财税服务 AI 转型<br>需求确认与方案规划书</h1>
+    <p class="sub">基于双方前期沟通整理：明确贵司现状、核心需求与 AI 转型路径，并附参考报价与商务模式，作为后续功能对齐与正式签约的基线。</p>
+    <div class="meta">
+      <span>致 · 威吉瑞（广东）企业服务集团有限公司</span>
+      <span>文档性质 · 需求确认 / 前期沟通版</span>
+      <span>阶段 · 意向确认（未签约）</span>
+      <span>日期 · 2026-08-16</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 0. 一页纸结论 ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-no">00</span><h2>一页纸结论</h2><span class="en">Executive Summary</span></div>
+    <p class="lead">我们理解，贵司当前的核心诉求不是"上一个 AI 工具"，而是<strong>把被重复沟通吞掉的产能释放出来</strong>——先减负，再谈增长。围绕这一目标，本方案给出"一条主线、八项模块、三期推进"的结构，并建议以<strong>低风险验证</strong>的方式启动。</p>
+    <div class="grid3">
+      <div class="card"><h4>核心目标</h4><p class="muted">先减工作量，再谈增长；把"一人服务 100 家"的产能向 500–1000 家推进。</p></div>
+      <div class="card"><h4>最高优先级</h4><p class="muted">AI 客服 + 客户管理：解放微信沟通与跟进，建立客户分层与知识底座。</p></div>
+      <div class="card"><h4>启动方式</h4><p class="muted">建议"基础客服验证"先跑通价值；个人微信自动化须先做技术验证，再行试点。</p></div>
+    </div>
+    <div class="callout gold">
+      <p><strong>首期投入参考（基于已确认口径）：</strong></p>
+      <p>· <strong>首期（预算 3 万元以内，已确认）：</strong>以<strong>企业微信官方接口</strong>落地"基础客服提效验证（方案 A）"，约 <strong>2.48–2.98 万元</strong>。含业务流程梳理、客户管理（≤300 条/5 账号）、待跟进、AI 客服助手（FAQ 30–50 条）与试运行报告。</p>
+      <p>· <strong>个人微信自动化（单列，不在首期 3 万内）：</strong>贵司约 7000 名客户沉淀在两个个人微信号，是核心资产；但其"自动读取/发送"须先做<strong>技术可行性验证（0.98–1.58 万元）</strong>，验证通过后再进入单账号试点（5.0 万元起），须作为独立报价项，不与首期捆绑。</p>
+      <p class="note">以上为参考区间，最终以功能对齐后的详细工作量为准。完整模块与三期总览见第七、八节。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 关于威吉瑞 ============ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-no">01</span><h2>关于威吉瑞（客户背景整理）</h2><span class="en">About Weijirui</span></div>
+    <p class="lead">以下背景信息基于贵司官网、公开工商信息及前期沟通整理，用于对齐我们对贵司业务的理解；如有偏差，请以贵司确认为准。</p>
+
+    <h3>1.1 公司概况</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px;">项目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>公司全称</td><td>威吉瑞（广东）企业服务集团有限公司</td></tr>
+          <tr><td>成立时间</td><td>2017 年 5 月</td></tr>
+          <tr><td>运营总部</td><td>横琴粤澳深度合作区（珠海市横琴三一南方总部大厦 1 栋 11 楼）</td></tr>
+          <tr><td>服务区域</td><td>立足横琴，辐射粤港澳大湾区</td></tr>
+          <tr><td>核心团队</td><td>创始人/总经理 罗祖威（对外品牌名"税罗汉"），税务专家，具广东省内税务机关 16 年经验；聚合财务、法务、税务、国际等领域专业人士</td></tr>
+          <tr><td>企业规模</td><td>小微企业（团队约 30 余人）；A 级纳税人；持有多个注册商标；对外投资多家企业</td></tr>
+          <tr><td>业务定位</td><td>企业"财税法国际"一站式赋能平台，陪伴大湾区中小企业全生命周期发展</td></tr>
+          <tr><td>服务规模</td><td>累计服务客户 1000+，解决财税问题 1000+</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>1.2 四大业务板块</h3>
+    <div class="grid2">
+      <div class="card"><h4>财 · 财务</h4><p class="muted">由注册会计师团队、企业融资专家提供，专注企业定制财税解决方案与高效、安全的内控财务管理体系。</p></div>
+      <div class="card"><h4>法 · 法务</h4><p class="muted">企业合规与法律事务支持，与财、税协同形成一站式服务。</p></div>
+      <div class="card"><h4>税 · 税务</h4><p class="muted">税务风险检测、税务筹划、税务稽查案件处理；围绕企业合理商业目的降低税负、管控风险。</p></div>
+      <div class="card"><h4>国际 · 环球配置</h4><p class="muted">环球投资、海外保险、海外房产、身份规划、海外家族信托、海外留学等专业服务。</p></div>
+    </div>
+
+    <h3>1.3 关键数字</h3>
+    <div class="grid3">
+      <div class="card"><h4>服务客户</h4><p class="muted">1000+ 家中小企业</p></div>
+      <div class="card"><h4>客户触点</h4><p class="muted">2 个个人微信号，合计约 7000 人（5000 + 2000+）</p></div>
+      <div class="card"><h4>核心系统</h4><p class="muted">现用"金彩代账"网页版（云端，关联电子税务局）</p></div>
+    </div>
+    <div class="callout">
+      <p><strong>一句话定位：</strong>这是一家<mark class="key">"以人服务为主、客户量大、微信为核心沟通触点、线下口碑获客"</mark>的财税服务企业。AI 转型的核心，是把沟通与流程中的重复人力解放出来，让服务变得可规模化、可复制。</p>
+    </div>
+    <p class="note">说明：此前内部沟通稿中出现的"横景补贴政策"为"横琴（粤澳深度合作区）补贴政策"之笔误/音近，本文统一以"横琴"为准。</p>
+  </div>
+</section>
+
+<!-- ============ 2. 现状与痛点 ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-no">02</span><h2>现状诊断与核心痛点</h2><span class="en">Diagnosis &amp; Pain Points</span></div>
+    <p class="lead">基于前期沟通，贵司当前面临四大痛点，集中在"沟通跟进、客户分层、咨询承载、汇报留痕"四个环节。诊断的本质是：<strong>重复沟通正在吞噬服务产能</strong>。</p>
+
+    <div class="pain"><span class="tag">痛点 1 · 沟通效率</span><h4>客户沟通与跟进不及时</h4><p>各类场合大量添加客户微信，但后续跟进难以到位；工作群过多、消息看不过来，导致回复延迟，直接影响服务体验与转化。<br><span class="muted">影响度：高（9/10）</span></p></div>
+    <div class="pain"><span class="tag">痛点 2 · 客户分层</span><h4>客户分类与服务分级缺失</h4><p>缺乏有效打标与分级，对低收费客户投入了不成比例的精力，服务成本偏高；高价值客户的价值未被充分挖掘。<br><span class="muted">影响度：高（8/10）</span></p></div>
+    <div class="pain"><span class="tag">痛点 3 · 咨询承载</span><h4>咨询类服务耗时过长</h4><p>年度顾问等服务中，许多问题本可由 AI 整理后直接回答；但客户习惯在顾问通道反复询问，消耗大量顾问时间。<br><span class="muted">影响度：中偏高（7/10）</span></p></div>
+    <div class="pain"><span class="tag">痛点 4 · 汇报留痕</span><h4>日报与周报流于形式</h4><p>现有日报/周报多为敷衍式文档或 PDF，缺乏对比，无法与客户任务进度挂钩，既不能体现服务价值，也无法支撑过程管理。<br><span class="muted">影响度：中（5/10）</span></p></div>
+
+    <h3>2.1 痛点—影响度一览</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:60px;">#</th><th>痛点</th><th>对应业务环节</th><th style="width:110px;">影响度</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>客户沟通与跟进不及时</td><td>微信沟通 / 售前售后</td><td><span class="pill top">9 / 10</span></td></tr>
+          <tr><td>2</td><td>客户分类与服务分级缺失</td><td>客户运营 / 成本管理</td><td><span class="pill high">8 / 10</span></td></tr>
+          <tr><td>3</td><td>咨询类服务耗时过长</td><td>年度顾问 / 咨询</td><td><span class="pill med">7 / 10</span></td></tr>
+          <tr><td>4</td><td>日报周报流于形式</td><td>过程管理 / 客户感知</td><td><span class="pill med">5 / 10</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 目标与思路 ============ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-no">03</span><h2>转型目标与核心思路</h2><span class="en">Goals &amp; Approach</span></div>
+    <h3>3.1 核心目标</h3>
+    <p>贵司明确表达：AI 转型的第一优先级是<strong>减少目前的工作量</strong>，在此基础上再谈业务增长与产品化。我们据此将目标排序为——</p>
+    <div class="grid3">
+      <div class="card"><h4>先减负</h4><p class="muted">用 AI 承接高频重复沟通与咨询，把人力从"答重复题"中解放。</p></div>
+      <div class="card"><h4>再分层</h4><p class="muted">用客户画像与打标，让服务资源向高价值客户倾斜。</p></div>
+      <div class="card"><h4>后增长</h4><p class="muted">沉淀知识资产与线上获客机制，支撑规模化服务。</p></div>
+    </div>
+
+    <h3>3.2 我们的方法论底色</h3>
+    <p>结合行业实践，我们主张用三种理念支撑本次转型，而非简单"买一个聊天机器人"：</p>
+    <div class="card"><h4>① Workflow-first（流程优先，而非聊天优先）</h4><p class="muted">先把高频业务（如工商注册前期沟通）拆成确定性流程节点，再让 AI 进入流程，而不是让 AI 自由发挥。对财税这类高风险、强合规场景尤为关键。</p></div>
+    <div class="card"><h4>② Human-in-the-loop（人在回路）</h4><p class="muted">税务案件、重大风险、正式申报、报价承诺类内容，默认不自动发送，必须人工审核确认。AI 负责提速，人负责把关与担责。</p></div>
+    <div class="card"><h4>③ 知识飞轮 / ANC（持续进化）</h4><p class="muted">每一次服务产生的记录持续回流为企业知识，知识固化为可复用能力，越用越聪明。这是本次 AI 客服与知识库的长期引擎（详见第五节）。</p></div>
+
+    <div class="callout">
+      <p><strong>我们的角色定位：</strong>不是"卖一个工具"，而是作为<mark class="key">前沿部署（FDE）陪跑方</mark>——进入贵司真实业务场景，诊断流程、设计 AI 方案、协助试点与人员培养，并持续迭代，直到产生可衡量的经营结果。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 需求总览 ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-no">04</span><h2>需求模块总览</h2><span class="en">Requirements Overview</span></div>
+    <p class="lead">围绕四大痛点，梳理出八项需求模块。其中<strong>最高优先级是 AI 客服（M1）</strong>，它包含三个联动点：① 企业微信/统一入口客服机器人；② 企业知识库（财税 + 税务 + 横琴补贴政策）；③ 语气蒸馏（像真人、且多语气轮换）。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:54px;">#</th><th>需求模块</th><th>对应痛点</th><th style="width:120px;">优先级</th></tr></thead>
+        <tbody>
+          <tr><td>M1</td><td>AI 客服机器人（含企业知识库、语气蒸馏）</td><td>痛点 1 · 沟通效率</td><td><span class="pill top">最高</span></td></tr>
+          <tr><td>M2</td><td>客户管理（画像与打标）</td><td>痛点 2 · 客户分层</td><td><span class="pill high">高</span></td></tr>
+          <tr><td>M3</td><td>任务与进度管理</td><td>痛点 4 · 汇报留痕</td><td><span class="pill high">高</span></td></tr>
+          <tr><td>M4</td><td>咨询知识库与 AI 问答</td><td>痛点 3 · 咨询承载</td><td><span class="pill med">中</span></td></tr>
+          <tr><td>M5</td><td>业务流程标准化（沟通 / 媒体）</td><td>痛点 1 · 沟通效率</td><td><span class="pill med">中</span></td></tr>
+          <tr><td>M6</td><td>新媒体运营</td><td>获客与口碑</td><td><span class="pill med">中</span></td></tr>
+          <tr><td>M7</td><td>记账系统重构</td><td>系统底座</td><td><span class="pill low">低（重大投入）</span></td></tr>
+          <tr><td>M8</td><td>数字员工应用</td><td>财务自动化</td><td><span class="pill med">中</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4.1 模块要点</h3>
+
+    <div class="mod"><div class="mhead"><span class="midx">M1</span><span class="mtitle">AI 客服机器人（最高优先级）</span><span class="pill top">最高</span></div>
+      <div class="mbody">
+        <p><strong>背景：</strong>客户习惯在微信上发起沟通，人工难以覆盖全部消息。AI 客服用于承接高频、重复咨询，把人工解放出来。</p>
+        <p class="subitem">（1）客服机器人与统一入口</p>
+        <ul><li>作为客户沟通统一入口；自动应答高频重复问题，复杂/高价值问题智能转人工。</li><li>应答记录同步至客户档案，支撑画像与打标（联动 M2）。</li></ul>
+        <p class="subitem">（2）企业知识库（RAG 底座）</p>
+        <ul><li>覆盖<strong>财务、税务以及横琴（粤澳深度合作区）补贴政策</strong>。</li><li>梳理政策法规、补贴政策、行业知识、常见问题与过往案例，向量化后支持检索问答；无法自动回答的问题沉淀为新知识，持续进化。</li></ul>
+        <p class="subitem">（3）语气蒸馏</p>
+        <ul><li>对历史聊天语气、措辞、习惯进行"蒸馏"建模，使 AI 回复接近真人。</li><li><strong>多语气机制：</strong>内置多套语气模板，按场景/客户/时段轮换，避免客户识别出是 AI。</li></ul>
+      </div>
+    </div>
+
+    <div class="mod"><div class="mhead"><span class="midx">M2</span><span class="mtitle">客户管理（画像与打标）</span><span class="pill high">高</span></div>
+      <div class="mbody">
+        <p><strong>背景：</strong>客户分散在两个个人微信号中，缺乏统一管理；低收费客户占用过多精力。</p>
+        <ul><li><strong>聊天记录导出：</strong>导出两个微信号（5000 人 + 2000+ 人）的全部聊天记录，清洗、结构化后统一入库，作为客户管理与语气蒸馏的数据基础。</li><li><strong>客户画像 / 打标 / 分级：</strong>按收费档位、服务内容、贡献度、活跃度等多维度打标，自动划分服务等级。</li><li><strong>高价值客户筛选：</strong>不同等级对应不同 SLA 与人力投入。</li></ul>
+      </div>
+    </div>
+
+    <div class="mod"><div class="mhead"><span class="midx">M3</span><span class="mtitle">任务与进度管理</span><span class="pill high">高</span></div>
+      <div class="mbody"><p>面向大客户建立项目进度看板，呈现任务完成度与预计结束时间；自动生成可推送客户的进度周报，用数据体现服务价值，替代"敷衍式日报"。</p></div>
+    </div>
+
+    <div class="mod"><div class="mhead"><span class="midx">M4</span><span class="mtitle">咨询知识库与 AI 问答</span><span class="pill med">中</span></div>
+      <div class="mbody"><p>复用 M1 知识库底座，扩展咨询问答场景；AI 先应答并附依据来源，顾问审核补充，知识持续进化。砍掉重复咨询，释放顾问精力。</p></div>
+    </div>
+
+    <div class="mod"><div class="mhead"><span class="midx">M5</span><span class="mtitle">业务流程标准化</span><span class="pill med">中</span></div>
+      <div class="mbody"><p>（a）沟通流程：将工商注册等前期重复沟通（约占 80% 工作量）标准化为模板与话术，用工具自动推进。（b）媒体发布：AI 生成初稿、人工审核后一键发布至公众号、视频号、网站等平台。</p></div>
+    </div>
+
+    <div class="mod"><div class="mhead"><span class="midx">M6</span><span class="mtitle">新媒体运营</span><span class="pill med">中</span></div>
+      <div class="mbody"><p>建立可持续的内容生产与多平台发布机制（含数字人方案），覆盖公众号、视频号、网站、小红书，放大"内容→咨询→转化"的口碑链路。</p></div>
+    </div>
+
+    <div class="mod"><div class="mhead"><span class="midx">M7</span><span class="mtitle">记账系统重构</span><span class="pill low">低（重大投入）</span></div>
+      <div class="mbody"><p>当前使用"金彩代账"网页版。若开发更高级系统，需跳脱现有软件、从产品端重新设计记账流程与税务对接。工作量大、周期长，建议独立立项、分期推进。</p></div>
+    </div>
+
+    <div class="mod"><div class="mhead"><span class="midx">M8</span><span class="mtitle">数字员工应用</span><span class="pill med">中</span></div>
+      <div class="mbody"><p>以开票为切入点，引入数字员工承担票据处理、数据录入、对账等可自动化财务工作；任务有清晰日志与人工确认边界，保障财税合规。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. ANC 架构与知识飞轮 ============ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-no">05</span><h2>ANC 架构与知识飞轮（技术底座）</h2><span class="en">ANC Architecture &amp; Knowledge Flywheel</span></div>
+    <p class="lead">本方案的技术核心，是让 AI 不只是"一次性回答"，而是成为<strong>会持续进化的企业资产</strong>。其底层是一套"知识飞轮"机制（ANC，AI Native Company 框架）。</p>
+
+    <figure>
+      <figcaption style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:10px;">图 1 · 威吉瑞 AI 转型技术架构（ANC 框架）</figcaption>
+      <svg viewBox="0 0 680 470" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#1d4f91"/></marker>
+          <style>
+            .b1{fill:#1d4f91;stroke:#163b6e;} .b2{fill:#e9f0f8;stroke:#1d4f91;stroke-width:1.5;}
+            .b3{fill:#f8f0e1;stroke:#c98a2d;stroke-width:1.5;} .b4{fill:#fff;stroke:#5b6b80;stroke-width:1.2;}
+            .t{fill:#fff;font-size:13px;font-weight:700;} .t2{fill:#16202e;font-size:12.5px;font-weight:700;} .ts{fill:#5b6b80;font-size:11px;}
+            .lbl{fill:#1d4f91;font-size:12px;font-weight:700;}
+          </style>
+        </defs>
+
+        <!-- App layer -->
+        <rect x="20" y="20" width="640" height="92" rx="10" class="b2"/>
+        <text x="36" y="42" class="lbl">应用层 · 业务场景</text>
+        <rect x="40" y="54" width="92" height="46" rx="8" class="b4"/><text x="86" y="82" text-anchor="middle" class="t2">AI 客服</text>
+        <rect x="148" y="54" width="92" height="46" rx="8" class="b4"/><text x="194" y="82" text-anchor="middle" class="t2">客户管理</text>
+        <rect x="256" y="54" width="92" height="46" rx="8" class="b4"/><text x="302" y="82" text-anchor="middle" class="t2">任务进度</text>
+        <rect x="364" y="54" width="92" height="46" rx="8" class="b4"/><text x="410" y="82" text-anchor="middle" class="t2">咨询问答</text>
+        <rect x="472" y="54" width="92" height="46" rx="8" class="b4"/><text x="518" y="82" text-anchor="middle" class="t2">新媒体</text>
+        <rect x="580" y="54" width="64" height="46" rx="8" class="b4"/><text x="612" y="82" text-anchor="middle" class="t2">数字员工</text>
+
+        <!-- Flywheel layer -->
+        <rect x="20" y="130" width="640" height="120" rx="10" class="b3"/>
+        <text x="36" y="152" class="lbl" fill="#8a5d12">知识飞轮层 · 核心引擎（三层回流）</text>
+        <rect x="48" y="166" width="160" height="62" rx="8" class="b1"/><text x="128" y="192" text-anchor="middle" class="t">① 全量日志采集</text><text x="128" y="212" text-anchor="middle" class="ts" fill="#fff">异步、不阻塞业务</text>
+        <rect x="260" y="166" width="160" height="62" rx="8" class="b1"/><text x="340" y="192" text-anchor="middle" class="t">② 周期性知识清洗</text><text x="340" y="212" text-anchor="middle" class="ts" fill="#fff">每周提炼可复用知识</text>
+        <rect x="472" y="166" width="160" height="62" rx="8" class="b1"/><text x="552" y="192" text-anchor="middle" class="t">③ 技能固化分发</text><text x="552" y="212" text-anchor="middle" class="ts" fill="#fff">沉淀为 Agent 技能</text>
+        <line x1="208" y1="197" x2="258" y2="197" stroke="#c98a2d" stroke-width="2.5" marker-end="url(#ar)"/>
+        <line x1="420" y1="197" x2="470" y2="197" stroke="#c98a2d" stroke-width="2.5" marker-end="url(#ar)"/>
+        <path d="M552,228 C552,300 128,300 128,228" fill="none" stroke="#c98a2d" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#ar)"/>
+
+        <!-- Knowledge base -->
+        <rect x="20" y="266" width="640" height="64" rx="10" class="b2"/>
+        <text x="36" y="288" class="lbl">知识底座 · RAG 向量库</text>
+        <rect x="40" y="296" width="290" height="30" rx="6" class="b4"/><text x="185" y="316" text-anchor="middle" class="ts">财税 / 税务 / 横琴补贴政策知识库</text>
+        <rect x="350" y="296" width="290" height="30" rx="6" class="b4"/><text x="495" y="316" text-anchor="middle" class="ts">历史案例 · FAQ · SOP · 顾问决策</text>
+
+        <!-- Data layer -->
+        <rect x="20" y="344" width="640" height="56" rx="10" class="b2"/>
+        <text x="36" y="366" class="lbl">数据层</text>
+        <rect x="40" y="372" width="190" height="22" rx="6" class="b4"/><text x="135" y="388" text-anchor="middle" class="ts">客户画像</text>
+        <rect x="245" y="372" width="190" height="22" rx="6" class="b4"/><text x="340" y="388" text-anchor="middle" class="ts">聊天记录（含两微信号）</text>
+        <rect x="450" y="372" width="190" height="22" rx="6" class="b4"/><text x="545" y="388" text-anchor="middle" class="ts">业务 / 记账数据</text>
+
+        <!-- Compliance boundary -->
+        <rect x="20" y="412" width="640" height="44" rx="10" fill="#fbeee6" stroke="#b3541e" stroke-width="1.5"/>
+        <text x="36" y="439" fill="#b3541e" font-size="13" font-weight="700">合规与人工审核边界 · Human-in-the-loop：税务案件 / 重大风险 / 正式申报 / 报价承诺 默认不自动发送</text>
+
+        <line x1="340" y1="250" x2="340" y2="266" stroke="#1d4f91" stroke-width="2" marker-end="url(#ar)"/>
+      </svg>
+    </figure>
+
+    <h3>5.1 知识飞轮的三层回流</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:120px;">层级</th><th>做什么</th><th>对贵司的价值</th></tr></thead>
+        <tbody>
+          <tr><td>① 全量日志采集</td><td>所有 AI 交互（咨询、回复、工具调用）经统一网关异步记录，不阻塞员工工作。</td><td>贵司两微信号的咨询、应答、案例被自动沉淀，不再随人员流动丢失。</td></tr>
+          <tr><td>② 周期性知识清洗</td><td>每周定时从原始对话中提炼高频问题、满意回答、失败场景，写入知识库。</td><td>横琴补贴政策、税务口径等动态信息持续更新，知识库越用越准。</td></tr>
+          <tr><td>③ 技能固化分发</td><td>被验证有效的知识固化为 Agent 技能（SOP），分发到全员复用。</td><td>"像税罗汉那样答税案"的经验变成可继承的组织能力。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout gold">
+      <p><strong>效果佐证：</strong>同类实践数据显示，RAG 知识库命中率随飞轮运转持续提升——第 1 周约 5%，第 4 周约 30%，第 8 周可达 60%。即：员工从"AI 答非所问"逐步过渡到"AI 直接给出项目名、负责人、政策依据"。<strong>飞轮一旦转起来，贵司的财税知识资产会成为越积累越难被复制的壁垒。</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 分期规划 ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-no">06</span><h2>分期实施规划</h2><span class="en">Phased Roadmap</span></div>
+    <p class="lead">依据"先减工作量、再谈增长"的核心诉求，建议分三期推进。<strong>一期以 AI 客服（M1）为核心，联动客户管理（M2）</strong>，快速解决沟通效率与客户分层两大痛点。</p>
+
+    <div class="phase"><div class="pno">P1</div><div class="pbody">
+      <h4>一期 · AI 客服与客户管理（优先交付）</h4>
+      <p>交付 AI 客服机器人（企微/统一入口 + 企业知识库 + 语气蒸馏），同步推进客户管理（先完成两微信号聊天记录导出，再做画像、打标与高价值筛选）。建议以"验证优先"方式启动（见第七节）。</p>
+    </div></div>
+
+    <div class="phase"><div class="pno">P2</div><div class="pbody">
+      <h4>二期 · 咨询与获客</h4>
+      <p>接入任务与进度管理（M3）、咨询知识库与 AI 问答（M4，复用 M1 底座）、业务流程标准化（M5）、新媒体运营（M6）。持续沉淀知识资产、释放沟通人力，建立线上获客机制。</p>
+    </div></div>
+
+    <div class="phase"><div class="pno">P3</div><div class="pbody">
+      <h4>三期 · 系统与自动化</h4>
+      <p>推进数字员工扩展（M8），并启动记账系统重构（M7）的独立立项。投入大、周期长，作为长期数字化底座，需先完成产品与数据方案论证。</p>
+    </div></div>
+
+    <h3>6.1 各模块分期与投入示意</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:200px;">模块</th><th>一期</th><th>二期</th><th>三期</th><th style="width:90px;">相对投入</th></tr></thead>
+        <tbody>
+          <tr><td>M1 AI 客服（含知识库、语气蒸馏）</td><td>●</td><td></td><td></td><td>中</td></tr>
+          <tr><td>M2 客户管理</td><td>●</td><td></td><td></td><td>中</td></tr>
+          <tr><td>M3 任务与进度</td><td></td><td>●</td><td></td><td>低</td></tr>
+          <tr><td>M4 咨询知识库</td><td></td><td>●</td><td></td><td>中</td></tr>
+          <tr><td>M5 流程标准化</td><td></td><td>●</td><td></td><td>中</td></tr>
+          <tr><td>M6 新媒体</td><td></td><td>●</td><td></td><td>中</td></tr>
+          <tr><td>M8 数字员工</td><td></td><td></td><td>●</td><td>中</td></tr>
+          <tr><td>M7 记账重构</td><td></td><td></td><td>●</td><td>高</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <p><strong>陪跑节奏（FDE 模式）：</strong>入企诊断 → AI 蓝图设计 → 试点落地 → 组织推广 → 持续陪跑。每个阶段都有明确交付物与可衡量指标，而非一次性交付后失联。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 报价与商务模式 ============ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-no">07</span><h2>报价方案与商务模式</h2><span class="en">Quotation &amp; Business Model</span></div>
+    <p class="lead">以下报价为<strong>参考区间</strong>，基于行业常见工作量估算，用于意向沟通与预算框定。正式报价以功能对齐后的详细工作量为准。考虑到这是双方首次合作，我们<strong>强烈建议以"验证优先"的方式启动</strong>，降低贵司的首次决策门槛与技术风险。</p>
+
+    <h3>7.1 模块化参考报价总表（全量视角，单位：万元）</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:170px;">模块</th><th>主要交付物</th><th style="width:140px;">参考报价</th></tr></thead>
+        <tbody>
+          <tr><td>M1a 客服机器人</td><td>企微/统一入口接入、消息路由、人工转接、记录同步</td><td>1.5 – 2.5</td></tr>
+          <tr><td>M1b 企业知识库</td><td>财税/税务/横琴政策梳理、向量化、RAG 检索问答</td><td>3 – 5</td></tr>
+          <tr><td>M1c 语气蒸馏</td><td>历史聊天分析、多语气模板、真人化回复引擎</td><td>2 – 3</td></tr>
+          <tr><td>M2 客户管理</td><td>两微信号聊天记录导出清洗、画像、打标、高价值筛选</td><td>2 – 3</td></tr>
+          <tr><td>M3 任务与进度</td><td>进度看板、任务管理、自动周报</td><td>2 – 3</td></tr>
+          <tr><td>M4 咨询问答</td><td>复用 M1 底座，扩展咨询问答</td><td>1.5 – 2.5</td></tr>
+          <tr><td>M5 流程标准化</td><td>沟通流程模板、媒体发布自动化</td><td>2 – 3</td></tr>
+          <tr><td>M6 新媒体运营</td><td>内容生产、多平台发布机制</td><td>2 – 4</td></tr>
+          <tr><td>M7 记账重构</td><td>产品级重构（独立立项）</td><td>10+</td></tr>
+          <tr><td>M8 数字员工</td><td>开票等财务场景自动化</td><td>3 – 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>7.2 推荐首期落地方案（验证优先）</h3>
+    <p>贵司目前以<strong>个人微信</strong>为客户主触点（两个号共约 7000 人）。需要特别说明：<strong>个人微信的"自动读取聊天记录 + 自动发送消息"与企业微信的官方接口不同，属于受平台规则约束的渠道自动化链路，必须先行技术验证，不能按普通项目直接承诺。</strong>因此我们把首期拆为两条可选路径：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:200px;">路径</th><th>内容</th><th>周期</th><th style="width:150px;">参考报价</th></tr></thead>
+        <tbody>
+          <tr><td><strong>方案 A</strong><br>基础客服提效验证</td><td>业务流程梳理、客户管理（≤300 条/5 账号）、待跟进、AI 客服助手（FAQ 30–50 条）、试运行报告。<br><span class="note">不含个人微信自动读取/发送。</span></td><td>10–15 工作日</td><td>2.48 – 2.98 万元</td></tr>
+          <tr><td><strong>方案 B</strong><br>个人微信自动化</td><td>① 技术可行性验证（指定账号/设备/场景下验证读取、解析、发送链路）；② 验证通过后进入单账号单设备自动化试点。</td><td>验证 7–10 工作日<br>试点 3–5 周</td><td><strong>5.98 万元起</strong><br><span class="note">验证 0.98–1.58 万 + 试点 5.0 万起</span></td></tr>
+          <tr class="total-row"><td colspan="3">首期若即含"个人微信自动读取 + 发送"（B 组合）</td><td>5.98 – 8.56 万元起</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout gold">
+      <p><strong>基于已确认口径的推荐首期（明确结论）：</strong></p>
+      <p>· <strong>首期 = 方案 A（企业微信官方接口）</strong>，预算 3 万元以内，报价 <strong>2.48–2.98 万元</strong>。先把客服机器人、知识库与基础客户管理在稳定、合规的企微通道跑通，快速验证"AI 减负"价值。</p>
+      <p>· <strong>个人微信自动化（B）单列：</strong>贵司约 7000 名客户沉淀在两个个人微信号，是未来必须打通的资产；但其自动读取/发送须先做<strong>技术可行性验证（0.98–1.58 万元，独立报价）</strong>，通过后再进单账号试点（5.0 万元起）。<strong>依据报价底线，个人微信自动化不得免费捆绑进 3 万首期，否则技术风险与后续维护全由我方承担。</strong></p>
+    </div>
+
+    <h3>7.3 个人微信自动化 · 专项边界（重要）</h3>
+    <div class="callout warn">
+      <ul style="margin-left:18px;">
+        <li><strong>以验证结果为准：</strong>个人微信是否支持自动读取/发送，须以技术验证结论为准，不把需求描述直接视为已实现。</li>
+        <li><strong>平台风险不承诺：</strong>平台规则、账号权限、登录状态、风控策略或第三方环境变化造成的不可用，不属于研发方对"平台稳定性"的保证范围。</li>
+        <li><strong>合规告知义务：</strong>贵司须保证有权处理相关客户信息与聊天内容，并向内部员工及客户履行必要告知义务。</li>
+        <li><strong>发送范围受限：</strong>自动发送须限定业务场景、对象与内容规则；<strong>税务案件、重大风险、报价承诺、正式申报类内容不得默认自动发送</strong>。</li>
+        <li><strong>交付边界：</strong>项目交付的是约定范围内的系统能力，不是无限期的微信账号运营/客服代运营服务。</li>
+      </ul>
+    </div>
+
+    <h3>7.4 商务模式</h3>
+    <div class="grid2">
+      <div class="card"><h4>① 项目制交付</h4><p class="muted">按模块/阶段收取一次性开发费，交付即用。</p></div>
+      <div class="card"><h4>② 验证 + 试点制</h4><p class="muted">首期小投入验证价值与可行性，再扩展——降低贵司首次决策门槛。</p></div>
+      <div class="card"><h4>③ 持续服务</h4><p class="muted">年维护费（开发费 15–20%/年）+ 知识库运营（按工作量）+ 按月技术支持。</p></div>
+      <div class="card"><h4>④ 扩展计费</h4><p class="muted">按账号数 / 设备数 / 场景数 / 运行要求确定正式版扩展费用。</p></div>
+    </div>
+
+    <h3>7.5 付款与变更规则（建议）</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:170px;">阶段</th><th>付款节奏</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>技术验证</td><td>签约 60% 启动 + 提交报告 40%</td><td>未通过不自动承诺退款，交付验证结果与替代方案。</td></tr>
+          <tr><td>试点开发</td><td>50% 启动 + 30% 可用版 + 20% 验收</td><td>超约定账号/设备/场景/次数，另行评估报价。</td></tr>
+          <tr><td>抵扣机制</td><td colspan="2">验证结束后 30 日内签订正式扩展合同，可约定将部分/全部验证费抵扣后续开发费。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. 下一步与待确认 ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-no">08</span><h2>下一步与待确认事项</h2><span class="en">Next Steps &amp; Open Items</span></div>
+
+    <h3>8.1 下一步计划</h3>
+    <ol>
+      <li>基于本文件，双方完成功能对齐，逐模块确认范围、规则与优先级。</li>
+      <li>基于已确认口径（首期 3 万内、先企微官方接口）产出正式报价单与交付时间表；个人微信自动化作为独立验证+报价项单列。</li>
+      <li>对一期（M1、M2）启动原型评审，锁定交互与字段细节。</li>
+    </ol>
+
+    <h3>8.2 待确认事项（功能对齐时逐项敲定）</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:150px;">事项</th><th>需确认内容</th><th style="width:150px;">影响</th></tr></thead>
+        <tbody>
+          <tr><td>接入路径 <span class="pill high">已定</span></td><td>已确认：<strong>先以企业微信官方接口</strong>落地客服机器人（稳定、合规、可承诺）；个人微信作为后续验证扩展。</td><td>影响 M1 / 报价</td></tr>
+          <tr><td>聊天记录导出</td><td>两微信号聊天记录的导出方式、权限与微信侧限制</td><td>影响 M2 与语气蒸馏</td></tr>
+          <tr><td>数据部署方式</td><td>待评估：由我方出架构建议后，贵司再决策上云或私有化部署。</td><td>影响架构与成本</td></tr>
+          <tr><td>知识库范围</td><td>财税/横琴补贴/行业知识的初始数据来源与更新机制（谁负责维护准确性）</td><td>影响 M1b / M4</td></tr>
+          <tr><td>语气蒸馏边界</td><td>语气模板数量、轮换策略、真人审核机制</td><td>影响 M1c</td></tr>
+          <tr><td>记账系统边界</td><td>M7 是否独立立项；数据迁移、与电子税务局对接方式、部署形态</td><td>影响 M7 报价</td></tr>
+          <tr><td>数字员工范围</td><td>开票之外优先自动化的财务场景清单</td><td>影响 M8</td></tr>
+          <tr><td>预算与周期 <span class="pill high">已定</span></td><td>首期预算 <strong>3 万元以内</strong>；期望上线时间待补充。个人微信自动化单列报价，不占用首期预算。</td><td>影响排期与分期</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <p><strong>关于"横琴补贴政策"：</strong>该政策是知识库的高价值内容，建议由贵司指定一名财税负责人提供权威口径与更新来源，我们以结构化方式入库并持续校对，避免政策误读导致的风险。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fcol">
+      <h4>文档说明</h4>
+      <p>本文件基于与威吉瑞（广东）企业服务集团有限公司的前期沟通整理，用于需求确认、功能对齐与报价沟通。文中量化目标（如一人服务 100→500/1000 家、工商前期沟通占 80%）来自贵司描述，最终以功能对齐确认后的口径为准。</p>
+    </div>
+    <div class="fcol">
+      <h4>核心目标</h4>
+      <p>先减工作量 · 一人服务 100 → 500/1000 家<br>报价均为参考区间，最终以双方确认的正式报价单为准。</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
